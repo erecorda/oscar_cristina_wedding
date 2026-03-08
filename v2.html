@@ -1,142 +1,119 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cris & Oscar · 18 setembre 2026</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cris & Oscar · V2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f3efe8;
-      --paper:#fffdf9;
-      --text:#24211f;
-      --muted:#6f685f;
-      --accent:#b58d5a;
-      --accent-dark:#9f7847;
-      --soft:#ebe3d7;
-      --line:rgba(36,33,31,.10);
-      --shadow:0 18px 40px rgba(0,0,0,.08);
-      --radius:26px;
-      --max:1220px;
+      --bg:#0f1115;
+      --panel:#171a20;
+      --panel-2:#1d2129;
+      --text:#f3efe8;
+      --muted:#b7b0a4;
+      --accent:#d2a86a;
+      --accent-2:#8fb1c9;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.35);
+      --radius:28px;
+      --max:1240px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
+      font-family:Manrope,sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(181,141,90,.10), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(181,141,90,.08), transparent 22%),
+        radial-gradient(circle at top left, rgba(210,168,106,.10), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(143,177,201,.12), transparent 22%),
         var(--bg);
       color:var(--text);
-      font-family:Inter,sans-serif;
       line-height:1.6;
     }
 
     h1,h2,h3,h4{
-      font-family:"Cormorant Garamond",serif;
+      font-family:Fraunces,serif;
       margin:0;
-      line-height:1.05;
-      letter-spacing:.01em;
+      line-height:1.02;
     }
 
-    p{margin:0 0 14px}
     a{text-decoration:none;color:inherit}
-
-    .container{
-      width:min(calc(100% - 32px), var(--max));
-      margin:0 auto;
-    }
+    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
 
     .nav{
       position:sticky;
       top:0;
       z-index:100;
-      backdrop-filter:blur(12px);
-      background:rgba(243,239,232,.86);
-      border-bottom:1px solid rgba(36,33,31,.06);
+      background:rgba(15,17,21,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
     }
 
     .nav-inner{
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:20px;
       padding:16px 0;
     }
 
-    .brand{
-      font-weight:600;
-      font-size:1.05rem;
-      letter-spacing:.04em;
-    }
-
-    .nav-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      color:var(--muted);
-      font-size:.96rem;
-    }
-
+    .brand{font-weight:700;letter-spacing:.04em}
+    .nav-links{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.95rem}
     .nav-links a:hover{color:var(--text)}
 
-    .hero{
-      padding:26px 0 18px;
-    }
-
-    .hero-grid{
+    .hero{padding:26px 0}
+    .hero-wrap{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:22px;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
       align-items:stretch;
     }
 
     .hero-main{
-      min-height:82vh;
+      min-height:86vh;
       border-radius:34px;
       overflow:hidden;
+      position:relative;
       box-shadow:var(--shadow);
       background:
-        linear-gradient(rgba(20,18,16,.26), rgba(20,18,16,.56)),
-        url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=80")
+        linear-gradient(rgba(8,10,14,.28), rgba(8,10,14,.72)),
+        url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2200&q=80")
         center/cover no-repeat;
       display:flex;
       align-items:end;
     }
 
     .hero-content{
-      color:white;
       padding:54px 34px 34px;
       max-width:760px;
     }
 
     .eyebrow{
       display:inline-block;
-      border:1px solid rgba(255,255,255,.42);
-      background:rgba(255,255,255,.10);
       padding:8px 14px;
       border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      color:#ddd4c7;
       font-size:.88rem;
       margin-bottom:18px;
-      backdrop-filter:blur(8px);
     }
 
     .hero h1{
-      font-size:clamp(3rem, 7vw, 6.2rem);
+      font-size:clamp(3.2rem, 7vw, 6.4rem);
       margin-bottom:16px;
     }
 
     .hero p{
-      max-width:60ch;
-      color:rgba(255,255,255,.94);
-      font-size:1.04rem;
+      max-width:58ch;
+      color:#ddd4c7;
+      margin:0 0 14px;
+      font-size:1.02rem;
     }
 
-    .hero-actions{
+    .actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
@@ -147,133 +124,95 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:48px;
-      padding:0 18px;
+      min-height:50px;
+      padding:0 20px;
       border-radius:999px;
-      font-weight:600;
-      transition:.2s ease;
       border:1px solid transparent;
-      cursor:pointer;
+      font-weight:700;
+      transition:.2s ease;
     }
 
     .btn:hover{transform:translateY(-1px)}
-
-    .btn-primary{
-      background:var(--accent);
-      color:#fff;
-    }
-
-    .btn-primary:hover{background:var(--accent-dark)}
-
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-primary:hover{filter:brightness(1.05)}
     .btn-secondary{
-      color:#fff;
-      border-color:rgba(255,255,255,.45);
-      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.18);
+      color:var(--text);
+      background:rgba(255,255,255,.04);
     }
 
     .hero-side{
       display:grid;
-      gap:22px;
+      gap:20px;
     }
 
-    .count-card,
-    .intro-card{
-      background:var(--paper);
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)), var(--panel);
       border:1px solid var(--line);
       border-radius:30px;
       box-shadow:var(--shadow);
       padding:28px;
     }
 
-    .intro-card{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:260px;
-    }
-
-    .intro-card h3{
+    .panel h3{
       font-size:2rem;
-      margin-bottom:12px;
+      margin-bottom:14px;
     }
 
-    .intro-card p{
-      color:var(--muted);
-    }
+    .panel p{color:var(--muted);margin:0}
 
-    .count-title{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:end;
-      margin-bottom:18px;
-    }
-
-    .count-title h3{
-      font-size:2rem;
-    }
-
-    .count-title span{
-      color:var(--muted);
-      font-size:.92rem;
-    }
-
-    .countdown{
+    .count-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:14px;
+      margin-top:20px;
     }
 
     .count{
+      background:var(--panel-2);
       border:1px solid var(--line);
-      background:#fcfaf7;
-      border-radius:20px;
-      padding:18px 12px;
+      border-radius:22px;
+      padding:18px 14px;
       text-align:center;
     }
 
-    .count h4{
-      font-size:2rem;
-      margin-bottom:2px;
+    .count .n{
+      font-family:Fraunces,serif;
+      font-size:2.2rem;
+      margin-bottom:4px;
     }
 
-    .count p{
-      margin:0;
+    .count .l{
       color:var(--muted);
-      font-size:.9rem;
+      font-size:.86rem;
       text-transform:uppercase;
       letter-spacing:.08em;
     }
 
-    .section{
-      padding:38px 0 20px;
-    }
-
+    .section{padding:22px 0 14px}
     .section-title{
       text-align:center;
-      margin-bottom:24px;
+      margin-bottom:22px;
     }
-
     .section-title h2{
       font-size:3rem;
       margin-bottom:8px;
     }
-
     .section-title p{
       color:var(--muted);
-      max-width:680px;
+      max-width:700px;
       margin:0 auto;
     }
 
-    .story-layout{
+    .story{
       display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:22px;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
       align-items:stretch;
     }
 
     .story-card{
-      background:var(--paper);
+      background:var(--panel);
       border:1px solid var(--line);
       border-radius:30px;
       box-shadow:var(--shadow);
@@ -283,115 +222,75 @@
       justify-content:center;
     }
 
-    .story-card h2{
-      font-size:3.1rem;
-      margin-bottom:18px;
-    }
+    .story-card h2{font-size:3rem;margin-bottom:18px}
+    .story-card p{color:var(--muted);margin:0 0 14px}
 
-    .story-card p{
-      color:var(--muted);
-      font-size:1.02rem;
-    }
-
-    .story-card strong{
-      color:var(--text);
-    }
-
-    .story-image{
+    .story-photo{
+      border-radius:30px;
       min-height:480px;
-      border-radius:30px;
-      overflow:hidden;
       box-shadow:var(--shadow);
-      background:
-        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
+      background:url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
     }
 
-    .agenda-wrap{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:30px;
-      box-shadow:var(--shadow);
-      padding:30px;
-    }
-
-    .timeline{
+    .agenda-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:18px;
     }
 
-    .time-item{
-      position:relative;
-      padding:22px 18px;
-      border-radius:22px;
-      background:#fcfaf7;
+    .agenda-item{
+      background:var(--panel);
       border:1px solid var(--line);
-      min-height:150px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
     }
 
-    .time-item::before{
-      content:"";
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:var(--accent);
-      position:absolute;
-      top:18px;
-      left:18px;
-    }
-
-    .time-item .hour{
-      display:block;
-      margin-left:22px;
-      font-weight:600;
-      color:var(--accent-dark);
-      font-size:.95rem;
-      letter-spacing:.05em;
+    .agenda-item .time{
+      color:var(--accent);
+      font-size:.9rem;
       text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:700;
+      margin-bottom:10px;
     }
 
-    .time-item h3{
+    .agenda-item h3{
       font-size:2rem;
-      margin:14px 0 8px;
+      margin-bottom:8px;
     }
 
-    .time-item p{
-      color:var(--muted);
-      margin:0;
-    }
+    .agenda-item p{margin:0;color:var(--muted)}
 
-    .gallery-grid{
+    .gallery{
       display:grid;
-      grid-template-columns:1.15fr .85fr .85fr;
+      grid-template-columns:1.2fr .8fr .8fr;
       gap:18px;
     }
 
-    .gallery-grid img{
+    .gallery img{
       width:100%;
-      height:340px;
+      height:320px;
       object-fit:cover;
-      border-radius:26px;
+      border-radius:28px;
       display:block;
       cursor:pointer;
       box-shadow:var(--shadow);
       transition:.25s ease;
     }
 
-    .gallery-grid img:first-child{
+    .gallery img:first-child{
       height:100%;
       min-height:520px;
       grid-row:span 2;
     }
 
-    .gallery-grid img:hover{
-      transform:scale(1.02);
-    }
+    .gallery img:hover{transform:scale(1.02)}
 
     .lightbox{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,.9);
+      background:rgba(0,0,0,.92);
       display:none;
       justify-content:center;
       align-items:center;
@@ -400,75 +299,74 @@
     }
 
     .lightbox img{
-      max-width:90%;
-      max-height:90%;
+      max-width:92%;
+      max-height:92%;
       border-radius:18px;
     }
 
-    .location-layout{
+    .location{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:22px;
+      gap:20px;
       align-items:stretch;
     }
 
-    .location-panel{
-      background:var(--paper);
+    .location-card,
+    .map-card,
+    .hotel,
+    .assist{
+      background:var(--panel);
       border:1px solid var(--line);
       border-radius:30px;
       box-shadow:var(--shadow);
+    }
+
+    .location-card{
       padding:34px;
     }
 
-    .location-panel h2{
+    .location-card h2{
       font-size:3rem;
       margin-bottom:16px;
     }
 
-    .location-panel p{
-      color:var(--muted);
-    }
+    .location-card p{color:var(--muted)}
 
-    .location-badges{
+    .meta{
       display:grid;
       gap:12px;
-      margin:22px 0 10px;
+      margin:22px 0 0;
     }
 
-    .badge{
-      border:1px solid var(--line);
-      border-radius:16px;
+    .meta-item{
       padding:14px 16px;
-      background:#fcfaf7;
+      border-radius:18px;
+      background:var(--panel-2);
+      border:1px solid var(--line);
     }
 
-    .badge strong{
+    .meta-item strong{
       display:block;
       margin-bottom:2px;
       color:var(--text);
     }
 
-    .map-wrap iframe{
+    .map-card iframe{
       width:100%;
       height:100%;
       min-height:460px;
       border:none;
       border-radius:30px;
-      box-shadow:var(--shadow);
       display:block;
     }
 
-    .hotels-grid{
+    .hotels{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
 
     .hotel{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
       padding:24px;
     }
 
@@ -482,24 +380,21 @@
       margin:0;
     }
 
-    .assist-card{
+    .assist{
       max-width:860px;
       margin:0 auto;
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:30px;
-      box-shadow:var(--shadow);
       padding:34px;
       text-align:center;
     }
 
-    .assist-card h2{
+    .assist h2{
       font-size:3rem;
       margin-bottom:12px;
     }
 
-    .assist-card p{
+    .assist p{
       color:var(--muted);
+      margin:0 0 12px;
     }
 
     .assist-list{
@@ -512,40 +407,40 @@
     }
 
     .assist-list li{
-      background:#fcfaf7;
+      background:var(--panel-2);
       border:1px solid var(--line);
-      border-radius:16px;
+      border-radius:18px;
       padding:14px 16px;
     }
 
     footer{
       text-align:center;
-      padding:46px 20px 60px;
-      color:#7d756d;
+      padding:42px 20px 56px;
+      color:var(--muted);
       font-size:.95rem;
     }
 
     @media (max-width: 1024px){
-      .hero-grid,
-      .story-layout,
-      .location-layout{
+      .hero-wrap,
+      .story,
+      .location{
         grid-template-columns:1fr;
       }
 
-      .timeline{
+      .agenda-grid{
         grid-template-columns:repeat(2,1fr);
       }
 
-      .gallery-grid{
+      .gallery{
         grid-template-columns:1fr 1fr;
       }
 
-      .gallery-grid img:first-child{
+      .gallery img:first-child{
         grid-row:auto;
-        min-height:340px;
+        min-height:320px;
       }
 
-      .hotels-grid{
+      .hotels{
         grid-template-columns:1fr;
       }
 
@@ -560,43 +455,34 @@
         align-items:flex-start;
       }
 
-      .hero-content{
-        padding:34px 24px 26px;
+      .hero-content,
+      .panel,
+      .story-card,
+      .location-card,
+      .hotel,
+      .assist{
+        padding:24px;
       }
 
-      .countdown{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .timeline,
-      .gallery-grid{
+      .agenda-grid,
+      .gallery{
         grid-template-columns:1fr;
       }
 
-      .gallery-grid img,
-      .gallery-grid img:first-child{
-        min-height:280px;
+      .gallery img,
+      .gallery img:first-child{
         height:280px;
+        min-height:280px;
       }
 
       .section-title h2,
       .story-card h2,
-      .location-panel h2,
-      .assist-card h2{
+      .location-card h2,
+      .assist h2{
         font-size:2.5rem;
       }
 
-      .count-card,
-      .intro-card,
-      .story-card,
-      .agenda-wrap,
-      .location-panel,
-      .assist-card{
-        padding:24px;
-      }
-
       .hero-main{
-        min-height:72vh;
         background-attachment:scroll;
       }
     }
@@ -618,27 +504,16 @@
   </nav>
 
   <header id="top" class="hero">
-    <div class="container hero-grid">
-
+    <div class="container hero-wrap">
       <section class="hero-main">
         <div class="hero-content">
           <div class="eyebrow">18 de setembre de 2026 · Masia Can Magí</div>
-
           <h1>Cris & Oscar</h1>
+          <p>Ens casem! Ens fa moltíssima il·lusió compartir amb vosaltres que el 18 de setembre de 2026 celebrarem la nostra boda a Masia Can Magí, a Sant Cugat del Vallès.</p>
+          <p>Serà un dia molt especial, envoltats de les persones que estimem de debò. Ens encantaria que forméssiu part d’aquest moment tan important per a nosaltres.</p>
+          <p>Apunteu la data a l’agenda. Molt aviat us explicarem més detalls. Gràcies per ser a les nostres vides.</p>
 
-          <p>
-            Ens casem! Ens fa moltíssima il·lusió compartir amb vosaltres que el 18 de setembre de 2026 celebrarem la nostra boda a Masia Can Magí, a Sant Cugat del Vallès.
-          </p>
-
-          <p>
-            Serà un dia molt especial, envoltats de les persones que estimem de debò. Ens encantaria que forméssiu part d’aquest moment tan important per a nosaltres.
-          </p>
-
-          <p>
-            Apunteu la data a l’agenda. Molt aviat us explicarem més detalls. Gràcies per ser a les nostres vides.
-          </p>
-
-          <div class="hero-actions">
+          <div class="actions">
             <a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
             <a class="btn btn-secondary" href="#lloc">Veure ubicació</a>
           </div>
@@ -646,50 +521,35 @@
       </section>
 
       <aside class="hero-side">
-        <div class="count-card">
-          <div class="count-title">
-            <h3>Compte enrere</h3>
-            <span>Falta molt poc</span>
-          </div>
-
-          <div class="countdown">
-            <div class="count"><h4 id="days">--</h4><p>Dies</p></div>
-            <div class="count"><h4 id="hours">--</h4><p>Hores</p></div>
-            <div class="count"><h4 id="minutes">--</h4><p>Minuts</p></div>
-            <div class="count"><h4 id="seconds">--</h4><p>Segons</p></div>
+        <div class="panel">
+          <h3>Compte enrere</h3>
+          <p>Ja queda menys per celebrar-ho plegats.</p>
+          <div class="count-grid">
+            <div class="count"><div class="n" id="days">--</div><div class="l">Dies</div></div>
+            <div class="count"><div class="n" id="hours">--</div><div class="l">Hores</div></div>
+            <div class="count"><div class="n" id="minutes">--</div><div class="l">Minuts</div></div>
+            <div class="count"><div class="n" id="seconds">--</div><div class="l">Segons</div></div>
           </div>
         </div>
 
-        <div class="intro-card">
-          <div>
-            <h3>Un dia per recordar</h3>
-            <p>
-              Ojalà puguem celebrar junts un dia ple de carinyo, moments especials i records bonics.
-            </p>
-          </div>
-          <div style="color:var(--accent-dark);font-weight:600;">Cris & Oscar us esperem ❤️</div>
+        <div class="panel">
+          <h3>Un dia per recordar</h3>
+          <p>Volem celebrar-ho amb vosaltres en un entorn especial, amb afecte, moments bonics i molta il·lusió.</p>
         </div>
       </aside>
-
     </div>
   </header>
 
   <section id="historia" class="section">
-    <div class="container story-layout">
+    <div class="container story">
       <article class="story-card">
         <h2>La nostra història</h2>
-        <p>
-          Ens fa immensament feliços poder compartir aquesta notícia amb vosaltres: el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.
-        </p>
-        <p>
-          Hem imaginat aquesta celebració a Masia Can Magí com un dia ple d’afecte, de persones estimades i de moments que recordarem sempre.
-        </p>
-        <p>
-          <strong>Cris & Oscar us esperem!</strong>
-        </p>
+        <p>Ens fa immensament feliços poder compartir aquesta notícia amb vosaltres: el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.</p>
+        <p>Hem imaginat aquesta celebració a Masia Can Magí com un dia ple d’afecte, de persones estimades i de moments que recordarem sempre.</p>
+        <p><strong>Cris & Oscar us esperem!</strong></p>
       </article>
 
-      <div class="story-image"></div>
+      <div class="story-photo"></div>
     </div>
   </section>
 
@@ -697,35 +557,30 @@
     <div class="container">
       <div class="section-title">
         <h2>Agenda del dia</h2>
-        <p>Una previsió orientativa perquè pugueu guardar el ritme de la celebració.</p>
+        <p>Una proposta més contemporània, amb la mateixa informació clau per als convidats.</p>
       </div>
 
-      <div class="agenda-wrap">
-        <div class="timeline">
-          <div class="time-item">
-            <span class="hour">17:30</span>
-            <h3>Arribada</h3>
-            <p>Recepció dels convidats a la masia.</p>
-          </div>
-
-          <div class="time-item">
-            <span class="hour">18:00</span>
-            <h3>Cerimònia</h3>
-            <p>El moment més especial del dia.</p>
-          </div>
-
-          <div class="time-item">
-            <span class="hour">19:00</span>
-            <h3>Còctel</h3>
-            <p>Brindis, conversa i primers records.</p>
-          </div>
-
-          <div class="time-item">
-            <span class="hour">21:00</span>
-            <h3>Sopar</h3>
-            <p>Celebració, sopar i una gran nit plegats.</p>
-          </div>
-        </div>
+      <div class="agenda-grid">
+        <article class="agenda-item">
+          <div class="time">17:30</div>
+          <h3>Arribada</h3>
+          <p>Recepció dels convidats a la masia.</p>
+        </article>
+        <article class="agenda-item">
+          <div class="time">18:00</div>
+          <h3>Cerimònia</h3>
+          <p>El moment més especial del dia.</p>
+        </article>
+        <article class="agenda-item">
+          <div class="time">19:00</div>
+          <h3>Còctel</h3>
+          <p>Brindis, trobades i primers records.</p>
+        </article>
+        <article class="agenda-item">
+          <div class="time">21:00</div>
+          <h3>Sopar</h3>
+          <p>Celebració, sopar i una gran nit plegats.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -734,10 +589,10 @@
     <div class="container">
       <div class="section-title">
         <h2>Galeria</h2>
-        <p>Una selecció d’imatges amb un to més elegant i coherent.</p>
+        <p>Mateix contingut, però amb una composició molt més cinematogràfica.</p>
       </div>
 
-      <div class="gallery-grid">
+      <div class="gallery">
         <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80" alt="Decoració elegant de boda">
         <img src="https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?auto=format&fit=crop&w=1400&q=80" alt="Taula elegant de boda">
         <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1400&q=80" alt="Brindis de celebració">
@@ -752,24 +607,21 @@
   </div>
 
   <section id="lloc" class="section">
-    <div class="container location-layout">
-      <article class="location-panel">
+    <div class="container location">
+      <article class="location-card">
         <h2>Masia Can Magí</h2>
+        <p>Ens veurem en aquest espai tan especial per celebrar un dia que volem compartir amb tota la gent que estimem.</p>
 
-        <p>
-          Ens veurem en aquest espai tan especial per celebrar un dia que volem compartir amb tota la gent que estimem.
-        </p>
-
-        <div class="location-badges">
-          <div class="badge">
+        <div class="meta">
+          <div class="meta-item">
             <strong>Lloc</strong>
             Masia Can Magí
           </div>
-          <div class="badge">
+          <div class="meta-item">
             <strong>Adreça</strong>
             Avinguda de Can Magí, 5 · 08173 Sant Cugat del Vallès
           </div>
-          <div class="badge">
+          <div class="meta-item">
             <strong>Data</strong>
             18 de setembre de 2026
           </div>
@@ -781,7 +633,7 @@
         </a>
       </article>
 
-      <div class="map-wrap">
+      <div class="map-card">
         <iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe>
       </div>
     </div>
@@ -791,20 +643,18 @@
     <div class="container">
       <div class="section-title">
         <h2>Hotels recomanats</h2>
-        <p>Algunes opcions pràctiques per als convidats que vinguin de fora o vulguin quedar-se a prop.</p>
+        <p>Opcions pràctiques per als convidats que vinguin de fora o prefereixin dormir a prop.</p>
       </div>
 
-      <div class="hotels-grid">
+      <div class="hotels">
         <article class="hotel">
           <h3>Hotel Sant Cugat</h3>
           <p>A prop del centre i ben comunicat amb la masia.</p>
         </article>
-
         <article class="hotel">
           <h3>AC Hotel Sant Cugat</h3>
           <p>Una opció còmoda per a convidats que venen de fora.</p>
         </article>
-
         <article class="hotel">
           <h3>B&amp;B Hotel Sant Cugat</h3>
           <p>Alternativa pràctica i més econòmica per passar la nit.</p>
@@ -815,16 +665,10 @@
 
   <section id="assistencia" class="section">
     <div class="container">
-      <article class="assist-card">
+      <article class="assist">
         <h2>Confirmació d'assistència</h2>
-
-        <p>
-          Molt aviat afegirem el formulari per confirmar assistència.
-        </p>
-
-        <p>
-          Quan estigui disponible, podreu indicar:
-        </p>
+        <p>Molt aviat afegirem el formulari per confirmar assistència.</p>
+        <p>Quan estigui disponible, podreu indicar:</p>
 
         <ul class="assist-list">
           <li>Si podreu acompanyar-nos el dia de la boda</li>
@@ -874,7 +718,7 @@
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
-    document.querySelectorAll(".gallery-grid img").forEach(img => {
+    document.querySelectorAll(".gallery img").forEach(img => {
       img.onclick = () => {
         lightbox.style.display = "flex";
         lightboxImg.src = img.src;
