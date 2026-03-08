@@ -7,30 +7,33 @@
 
 <title>Oscar & Cristina · 5 setembre 2026</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 :root{
+--gold:#b89563;
 --bg:#f6f2ec;
 --text:#2c2a28;
 --muted:#6e675f;
---gold:#b89563;
---shadow:0 25px 60px rgba(0,0,0,.15);
---radius:20px;
 --max:1200px;
+--radius:20px;
+--shadow:0 30px 60px rgba(0,0,0,.15);
 }
 
 *{box-sizing:border-box}
 
 body{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+font-family:Inter, sans-serif;
 background:var(--bg);
 color:var(--text);
 line-height:1.6;
 }
 
 h1,h2,h3{
-font-family:Georgia,serif;
+font-family:"Playfair Display",serif;
+margin-top:0;
 }
 
 .container{
@@ -69,10 +72,9 @@ min-height:90vh;
 border-radius:30px;
 display:flex;
 align-items:end;
-overflow:hidden;
 
 background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),
 url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
 center/cover fixed;
 
@@ -82,53 +84,46 @@ box-shadow:var(--shadow);
 .hero-content{
 color:white;
 padding:60px;
-max-width:700px;
+max-width:650px;
 }
 
 .hero h1{
-font-size:clamp(40px,6vw,70px);
+font-size:clamp(40px,6vw,72px);
 }
 
 .eyebrow{
-border:1px solid rgba(255,255,255,.5);
+border:1px solid rgba(255,255,255,.6);
 display:inline-block;
-padding:8px 16px;
-border-radius:40px;
+padding:6px 14px;
+border-radius:30px;
 font-size:14px;
 }
 
 .countdown{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:14px;
+gap:12px;
 margin-top:20px;
-max-width:500px;
 }
 
 .count{
-background:rgba(255,255,255,.15);
-border-radius:14px;
-text-align:center;
+background:rgba(255,255,255,.2);
 padding:18px;
+text-align:center;
+border-radius:12px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 26px;
-border-radius:40px;
+padding:14px 24px;
+border-radius:30px;
 text-decoration:none;
-font-weight:600;
 margin-top:20px;
-margin-right:10px;
+font-weight:500;
 }
 
 .btn-primary{
 background:var(--gold);
-color:white;
-}
-
-.btn-secondary{
-border:1px solid white;
 color:white;
 }
 
@@ -154,7 +149,6 @@ box-shadow:var(--shadow);
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-top:40px;
 }
 
 .gallery img{
@@ -184,7 +178,6 @@ z-index:200;
 .lightbox img{
 max-width:90%;
 max-height:90%;
-border-radius:10px;
 }
 
 .agenda{
@@ -205,7 +198,7 @@ box-shadow:var(--shadow);
 .location{
 background:
 linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2000&q=80")
+url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3")
 center/cover;
 
 color:white;
@@ -214,10 +207,10 @@ padding:120px 0;
 }
 
 iframe{
-border-radius:20px;
 width:100%;
 height:350px;
 border:none;
+border-radius:20px;
 margin-top:30px;
 }
 
@@ -225,7 +218,6 @@ margin-top:30px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-top:40px;
 }
 
 .hotel{
@@ -245,7 +237,7 @@ box-shadow:var(--shadow);
 
 footer{
 text-align:center;
-padding:50px;
+padding:60px;
 color:#777;
 }
 
@@ -261,7 +253,6 @@ color:#777;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -291,20 +282,45 @@ color:#777;
 <p>Ens faria moltíssima il·lusió compartir aquest dia tan especial amb vosaltres.</p>
 
 <div class="countdown">
-
 <div class="count"><h2 id="days">--</h2>Dies</div>
 <div class="count"><h2 id="hours">--</h2>Hores</div>
 <div class="count"><h2 id="minutes">--</h2>Minuts</div>
 <div class="count"><h2 id="seconds">--</h2>Segons</div>
-
 </div>
 
 <a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
-<a class="btn btn-secondary" href="#lloc">Veure ubicació</a>
 
 </div>
 </div>
 </header>
+
+<section id="historia" class="section">
+<div class="container split">
+
+<div class="card">
+<h2>La nostra història</h2>
+<p>Després de molts moments compartits, viatges i aventures, hem decidit celebrar aquest dia amb les persones que més estimem.</p>
+</div>
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" style="border-radius:20px">
+
+</div>
+</section>
+
+<section id="agenda" class="section">
+<div class="container">
+
+<h2 style="text-align:center">Agenda del dia</h2>
+
+<div class="agenda">
+<div><h3>18:00</h3>Cerimònia</div>
+<div><h3>19:00</h3>Cocktail</div>
+<div><h3>21:00</h3>Sopar</div>
+<div><h3>23:30</h3>Festa</div>
+</div>
+
+</div>
+</section>
 
 <section id="galeria" class="section">
 <div class="container">
@@ -312,11 +328,9 @@ color:#777;
 <h2 style="text-align:center">Galeria</h2>
 
 <div class="gallery">
-
 <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92">
 <img src="https://images.unsplash.com/photo-1529636798458-92182e662485">
 <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
-
 </div>
 
 </div>
@@ -332,17 +346,55 @@ color:#777;
 
 <h2>Masia Can Magí</h2>
 
-<p>
-Av. de Can Magí 5<br>
-Sant Cugat del Vallès
-</p>
+<p>Av. de Can Magí 5 · Sant Cugat del Vallès</p>
 
-<iframe
-src="https://maps.google.com/maps?q=masia%20can%20magi&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
+<iframe src="https://maps.google.com/maps?q=masia%20can%20magi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 
 </div>
 
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 style="text-align:center">Hotels recomanats</h2>
+
+<div class="hotels">
+
+<div class="hotel">
+<h3>Hotel Sant Cugat</h3>
+<p>A 10 minuts de la masia</p>
+</div>
+
+<div class="hotel">
+<h3>AC Hotel Sant Cugat</h3>
+<p>Ideal per convidats de fora</p>
+</div>
+
+<div class="hotel">
+<h3>B&B Hotel Sant Cugat</h3>
+<p>Opció econòmica</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="assistencia" class="section">
+<div class="container">
+
+<div class="card">
+
+<h2>Confirmació d'assistència</h2>
+
+<p>Properament afegirem el formulari RSVP.</p>
+
+<a class="btn btn-primary">Formulari properament</a>
+
+</div>
+
+</div>
 </section>
 
 <footer>
@@ -351,23 +403,16 @@ Oscar & Cristina · 5 setembre 2026
 
 <script>
 
-const target = new Date(2026,8,5)
+const target=new Date(2026,8,5)
 
 function update(){
+const now=new Date()
+const diff=target-now
 
-const now = new Date()
-const diff = target-now
-
-const d = Math.floor(diff/86400000)
-const h = Math.floor(diff%86400000/3600000)
-const m = Math.floor(diff%3600000/60000)
-const s = Math.floor(diff%60000/1000)
-
-days.innerText=d
-hours.innerText=h
-minutes.innerText=m
-seconds.innerText=s
-
+days.innerText=Math.floor(diff/86400000)
+hours.innerText=Math.floor(diff%86400000/3600000)
+minutes.innerText=Math.floor(diff%3600000/60000)
+seconds.innerText=Math.floor(diff%60000/1000)
 }
 
 setInterval(update,1000)
@@ -375,14 +420,12 @@ update()
 
 document.querySelectorAll(".gallery img").forEach(img=>{
 img.onclick=()=>{
-document.getElementById("lightbox").style.display="flex"
-document.getElementById("lightbox-img").src=img.src
+lightbox.style.display="flex"
+lightboxImg.src=img.src
 }
 })
 
-document.getElementById("lightbox").onclick=()=>{
-document.getElementById("lightbox").style.display="none"
-}
+lightbox.onclick=()=>lightbox.style.display="none"
 
 </script>
 
