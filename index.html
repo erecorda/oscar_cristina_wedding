@@ -72,12 +72,10 @@ min-height:90vh;
 border-radius:30px;
 display:flex;
 align-items:end;
-
 background:
 linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),
 url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
 center/cover fixed;
-
 box-shadow:var(--shadow);
 }
 
@@ -200,7 +198,6 @@ background:
 linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
 url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3")
 center/cover;
-
 color:white;
 text-align:center;
 padding:120px 0;
@@ -272,7 +269,6 @@ color:#777;
 
 <header class="hero container">
 <div class="hero-card">
-
 <div class="hero-content">
 
 <div class="eyebrow">5 setembre 2026</div>
@@ -405,6 +401,11 @@ Oscar & Cristina · 5 setembre 2026
 
 const target=new Date(2026,8,5)
 
+const days=document.getElementById("days")
+const hours=document.getElementById("hours")
+const minutes=document.getElementById("minutes")
+const seconds=document.getElementById("seconds")
+
 function update(){
 const now=new Date()
 const diff=target-now
@@ -417,6 +418,9 @@ seconds.innerText=Math.floor(diff%60000/1000)
 
 setInterval(update,1000)
 update()
+
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
 
 document.querySelectorAll(".gallery img").forEach(img=>{
 img.onclick=()=>{
