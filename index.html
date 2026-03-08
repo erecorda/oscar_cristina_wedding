@@ -25,10 +25,14 @@
 
 body{
 margin:0;
-font-family:Inter, sans-serif;
+font-family:Inter,sans-serif;
 background:var(--bg);
 color:var(--text);
 line-height:1.6;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 h1,h2,h3{
@@ -72,10 +76,12 @@ min-height:90vh;
 border-radius:30px;
 display:flex;
 align-items:end;
+
 background:
 linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),
 url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
 center/cover fixed;
+
 box-shadow:var(--shadow);
 }
 
@@ -198,6 +204,7 @@ background:
 linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
 url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3")
 center/cover;
+
 color:white;
 text-align:center;
 padding:120px 0;
@@ -221,14 +228,6 @@ gap:20px;
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:var(--shadow);
-}
-
-.faq div{
-background:white;
-padding:25px;
-border-radius:15px;
-margin-bottom:15px;
 box-shadow:var(--shadow);
 }
 
@@ -399,37 +398,39 @@ Oscar & Cristina · 5 setembre 2026
 
 <script>
 
-const target=new Date(2026,8,5)
+const target=new Date(2026,8,5);
 
-const days=document.getElementById("days")
-const hours=document.getElementById("hours")
-const minutes=document.getElementById("minutes")
-const seconds=document.getElementById("seconds")
+const days=document.getElementById("days");
+const hours=document.getElementById("hours");
+const minutes=document.getElementById("minutes");
+const seconds=document.getElementById("seconds");
 
 function update(){
-const now=new Date()
-const diff=target-now
+const now=new Date();
+const diff=target-now;
 
-days.innerText=Math.floor(diff/86400000)
-hours.innerText=Math.floor(diff%86400000/3600000)
-minutes.innerText=Math.floor(diff%3600000/60000)
-seconds.innerText=Math.floor(diff%60000/1000)
+days.textContent=Math.floor(diff/86400000);
+hours.textContent=Math.floor(diff%86400000/3600000);
+minutes.textContent=Math.floor(diff%3600000/60000);
+seconds.textContent=Math.floor(diff%60000/1000);
 }
 
-setInterval(update,1000)
-update()
+setInterval(update,1000);
+update();
 
-const lightbox=document.getElementById("lightbox")
-const lightboxImg=document.getElementById("lightbox-img")
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
 
 document.querySelectorAll(".gallery img").forEach(img=>{
 img.onclick=()=>{
-lightbox.style.display="flex"
-lightboxImg.src=img.src
-}
-})
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+};
+});
 
-lightbox.onclick=()=>lightbox.style.display="none"
+lightbox.onclick=()=>{
+lightbox.style.display="none";
+};
 
 </script>
 
