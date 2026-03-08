@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Oscar & Cristina · 5 setembre 2026</title>
 
 <style>
 
 :root{
 --bg:#f6f2ec;
---paper:#fffdfa;
 --text:#2c2a28;
 --muted:#6e675f;
 --gold:#b89563;
---gold-dark:#9d7c4e;
---line:rgba(44,42,40,.10);
---shadow:0 20px 45px rgba(0,0,0,.12);
---radius:22px;
+--shadow:0 20px 40px rgba(0,0,0,.12);
+--radius:20px;
 --max:1200px;
 }
 
 *{box-sizing:border-box}
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
-color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
 background:var(--bg);
+color:var(--text);
 line-height:1.6;
 }
 
 h1,h2,h3{
 font-family:Georgia,serif;
-margin-bottom:10px;
 }
 
 .container{
@@ -44,7 +38,7 @@ width:min(92%,var(--max));
 margin:auto;
 }
 
-.nav{
+nav{
 position:sticky;
 top:0;
 background:white;
@@ -56,14 +50,13 @@ z-index:100;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 0;
+padding:18px 0;
 }
 
-.nav-links a{
+nav a{
 margin-left:18px;
 text-decoration:none;
 color:var(--muted);
-font-weight:500;
 }
 
 .hero{
@@ -72,34 +65,51 @@ padding:40px 0;
 
 .hero-card{
 min-height:90vh;
-display:flex;
-align-items:flex-end;
 border-radius:30px;
+display:flex;
+align-items:end;
 overflow:hidden;
+
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
 url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
 center/cover;
+
 box-shadow:var(--shadow);
 }
 
 .hero-content{
 color:white;
 padding:60px;
-max-width:800px;
+max-width:700px;
 }
 
 .hero h1{
 font-size:clamp(40px,6vw,70px);
+margin:10px 0;
 }
 
 .eyebrow{
+border:1px solid rgba(255,255,255,.5);
 display:inline-block;
-border:1px solid rgba(255,255,255,.4);
 padding:8px 16px;
-border-radius:30px;
-margin-bottom:15px;
+border-radius:40px;
 font-size:14px;
+}
+
+.countdown{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+margin-top:20px;
+max-width:500px;
+}
+
+.count{
+background:rgba(255,255,255,.15);
+border-radius:14px;
+text-align:center;
+padding:18px;
 }
 
 .btn{
@@ -108,8 +118,8 @@ padding:14px 24px;
 border-radius:40px;
 text-decoration:none;
 font-weight:600;
+margin-top:20px;
 margin-right:10px;
-margin-top:10px;
 }
 
 .btn-primary{
@@ -118,34 +128,12 @@ color:white;
 }
 
 .btn-secondary{
-border:1px solid rgba(255,255,255,.5);
+border:1px solid white;
 color:white;
-}
-
-.countdown{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-top:25px;
-max-width:500px;
-}
-
-.count{
-background:rgba(255,255,255,.15);
-padding:18px;
-text-align:center;
-border-radius:15px;
 }
 
 .section{
 padding:90px 0;
-}
-
-.card{
-background:white;
-padding:40px;
-border-radius:var(--radius);
-box-shadow:var(--shadow);
 }
 
 .split{
@@ -153,6 +141,13 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 align-items:center;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
 }
 
 .gallery{
@@ -165,7 +160,7 @@ margin-top:40px;
 .gallery img{
 width:100%;
 border-radius:20px;
-transition:transform .3s;
+transition:.3s;
 }
 
 .gallery img:hover{
@@ -181,7 +176,7 @@ margin-top:40px;
 
 .agenda div{
 background:white;
-padding:25px;
+padding:30px;
 border-radius:15px;
 text-align:center;
 box-shadow:var(--shadow);
@@ -192,9 +187,10 @@ background:
 linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
 url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2000&q=80")
 center/cover;
+
 color:white;
-padding:120px 0;
 text-align:center;
+padding:120px 0;
 }
 
 .hotels{
@@ -211,6 +207,18 @@ border-radius:15px;
 box-shadow:var(--shadow);
 }
 
+.faq{
+margin-top:40px;
+}
+
+.faq div{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:var(--shadow);
+}
+
 footer{
 text-align:center;
 padding:50px;
@@ -219,37 +227,25 @@ color:#777;
 
 @media(max-width:900px){
 
-.split{
-grid-template-columns:1fr;
-}
+.split{grid-template-columns:1fr}
+.gallery{grid-template-columns:1fr 1fr}
+.agenda{grid-template-columns:1fr 1fr}
+.hotels{grid-template-columns:1fr}
 
-.gallery{
-grid-template-columns:1fr 1fr;
-}
-
-.agenda{
-grid-template-columns:1fr 1fr;
-}
-
-.hotels{
-grid-template-columns:1fr;
-}
-
-.hero-content{
-padding:40px;
-}
+.hero-content{padding:40px}
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<nav class="nav">
+<nav>
 <div class="container nav-inner">
 <strong>Oscar & Cristina</strong>
-<div class="nav-links">
+<div>
 <a href="#historia">Nosaltres</a>
 <a href="#agenda">Agenda</a>
 <a href="#galeria">Galeria</a>
@@ -261,18 +257,22 @@ padding:40px;
 
 <header class="hero container">
 <div class="hero-card">
+
 <div class="hero-content">
 
 <div class="eyebrow">5 setembre 2026</div>
+
 <h1>Oscar & Cristina</h1>
 
 <p>Ens faria moltíssima il·lusió compartir aquest dia tan especial amb vosaltres.</p>
 
 <div class="countdown">
+
 <div class="count"><h2 id="days">--</h2>Dies</div>
 <div class="count"><h2 id="hours">--</h2>Hores</div>
 <div class="count"><h2 id="minutes">--</h2>Minuts</div>
 <div class="count"><h2 id="seconds">--</h2>Segons</div>
+
 </div>
 
 <a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
@@ -297,29 +297,15 @@ padding:40px;
 
 <section id="agenda" class="section">
 <div class="container">
+
 <h2 style="text-align:center">Agenda del dia</h2>
 
 <div class="agenda">
 
-<div>
-<h3>18:00</h3>
-Cerimònia
-</div>
-
-<div>
-<h3>19:00</h3>
-Cocktail
-</div>
-
-<div>
-<h3>21:00</h3>
-Sopar
-</div>
-
-<div>
-<h3>23:30</h3>
-Festa
-</div>
+<div><h3>18:00</h3>Cerimònia</div>
+<div><h3>19:00</h3>Cocktail</div>
+<div><h3>21:00</h3>Sopar</div>
+<div><h3>23:30</h3>Festa</div>
 
 </div>
 </div>
@@ -327,33 +313,41 @@ Festa
 
 <section id="galeria" class="section">
 <div class="container">
+
 <h2 style="text-align:center">Galeria</h2>
 
 <div class="gallery">
+
 <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92">
 <img src="https://images.unsplash.com/photo-1529636798458-92182e662485">
 <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
+
 </div>
 
 </div>
 </section>
 
 <section id="lloc" class="location">
+
 <div class="container">
 
 <h2>Masia Can Magí</h2>
 
 <p>
-Av. de Can Magí, 5<br>
+Av. de Can Magí 5<br>
 Sant Cugat del Vallès · Barcelona
 </p>
 
-<a class="btn btn-primary" target="_blank"
+<a class="btn btn-primary"
+target="_blank"
 href="https://www.google.com/maps/search/?api=1&query=Masia+Can+Magi+Sant+Cugat">
-Obrir a Google Maps
+
+Obrir Google Maps
+
 </a>
 
 </div>
+
 </section>
 
 <section class="section">
@@ -409,27 +403,27 @@ Oscar & Cristina · 5 setembre 2026
 
 <script>
 
-const target = new Date(2026,8,5);
+const target = new Date(2026,8,5)
 
 function update(){
 
-const now = new Date();
-const diff = target - now;
+const now = new Date()
+const diff = target-now
 
-const d = Math.floor(diff/86400000);
-const h = Math.floor(diff%86400000/3600000);
-const m = Math.floor(diff%3600000/60000);
-const s = Math.floor(diff%60000/1000);
+const d = Math.floor(diff/86400000)
+const h = Math.floor(diff%86400000/3600000)
+const m = Math.floor(diff%3600000/60000)
+const s = Math.floor(diff%60000/1000)
 
-document.getElementById("days").innerText=d;
-document.getElementById("hours").innerText=h;
-document.getElementById("minutes").innerText=m;
-document.getElementById("seconds").innerText=s;
+document.getElementById("days").innerText=d
+document.getElementById("hours").innerText=h
+document.getElementById("minutes").innerText=m
+document.getElementById("seconds").innerText=s
 
 }
 
-setInterval(update,1000);
-update();
+setInterval(update,1000)
+update()
 
 </script>
 
