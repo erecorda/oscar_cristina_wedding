@@ -1,227 +1,124 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cris & Oscar · Tria una versió</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Cris & Oscar · Versions web</title>
 
-  <style>
-    :root{
-      --bg:#f6f2ec;
-      --paper:#fffdfa;
-      --text:#2c2a28;
-      --muted:#6e675f;
-      --gold:#b89563;
-      --gold-dark:#9f7f51;
-      --line:rgba(44,42,40,.10);
-      --shadow:0 24px 60px rgba(0,0,0,.12);
-      --radius:28px;
-      --max:1120px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+<style>
 
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:Inter,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(184,149,99,.10), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(184,149,99,.08), transparent 22%),
-        var(--bg);
-      display:flex;
-      align-items:center;
-    }
+:root{
+--bg:#f6f2ec;
+--paper:#ffffff;
+--text:#2c2a28;
+--muted:#6e675f;
+--accent:#b89563;
+--radius:24px;
+--shadow:0 20px 50px rgba(0,0,0,.12);
+--max:900px;
+}
 
-    h1,h2{
-      font-family:"Playfair Display",serif;
-      margin:0;
-      line-height:1.05;
-    }
+*{box-sizing:border-box}
 
-    .container{
-      width:min(calc(100% - 32px), var(--max));
-      margin:0 auto;
-    }
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--text);
+display:flex;
+align-items:center;
+min-height:100vh;
+}
 
-    .card{
-      background:rgba(255,253,250,.90);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:48px 32px;
-      backdrop-filter:blur(10px);
-      text-align:center;
-    }
+h1{
+font-family:"Playfair Display",serif;
+font-size:clamp(2.8rem,6vw,4.5rem);
+margin-bottom:16px;
+}
 
-    .eyebrow{
-      display:inline-block;
-      padding:8px 14px;
-      border-radius:999px;
-      background:#f3ede5;
-      border:1px solid var(--line);
-      color:var(--muted);
-      font-size:.92rem;
-      margin-bottom:18px;
-    }
+.container{
+width:min(calc(100% - 40px),var(--max));
+margin:auto;
+text-align:center;
+}
 
-    h1{
-      font-size:clamp(2.8rem, 7vw, 5.2rem);
-      margin-bottom:12px;
-    }
+.card{
+background:var(--paper);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:50px 40px;
+}
 
-    .lead{
-      max-width:760px;
-      margin:0 auto;
-      color:var(--muted);
-      font-size:1.04rem;
-    }
+p{
+color:var(--muted);
+font-size:1rem;
+margin-bottom:40px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-      margin-top:38px;
-    }
+.buttons{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
 
-    .option{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:0 14px 34px rgba(0,0,0,.07);
-      padding:26px 22px;
-      text-align:left;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:250px;
-      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
+.btn{
+display:flex;
+align-items:center;
+justify-content:center;
+height:70px;
+border-radius:16px;
+background:var(--accent);
+color:white;
+font-weight:600;
+text-decoration:none;
+font-size:1.1rem;
+transition:.2s;
+}
 
-    .option:hover{
-      transform:translateY(-4px);
-      box-shadow:0 24px 50px rgba(0,0,0,.10);
-      border-color:rgba(184,149,99,.28);
-    }
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
 
-    .version-tag{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:58px;
-      height:58px;
-      border-radius:18px;
-      background:#f7f1e7;
-      color:var(--gold-dark);
-      font-weight:700;
-      font-size:1.05rem;
-      margin-bottom:18px;
-    }
+@media(max-width:700px){
 
-    .option h2{
-      font-size:2rem;
-      margin-bottom:10px;
-    }
+.buttons{
+grid-template-columns:1fr;
+}
 
-    .option p{
-      margin:0 0 22px;
-      color:var(--muted);
-      font-size:.98rem;
-    }
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:0 18px;
-      border-radius:999px;
-      background:var(--gold);
-      color:white;
-      font-weight:600;
-      text-decoration:none;
-      transition:background .2s ease, transform .2s ease;
-      width:100%;
-    }
-
-    .btn:hover{
-      background:var(--gold-dark);
-      transform:translateY(-1px);
-    }
-
-    .footer-note{
-      margin-top:24px;
-      color:var(--muted);
-      font-size:.92rem;
-    }
-
-    @media (max-width:900px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .card{
-        padding:36px 22px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <main class="container">
-    <section class="card">
-      <div class="eyebrow">Cris & Oscar · 18 de setembre de 2026</div>
-      <h1>Tria la versió que t’agrada més</h1>
-      <p class="lead">
-        Aquí tens tres propostes diferents de disseny per a la web de la boda.
-        El contingut és pràcticament el mateix, però cada versió té una personalitat visual diferent.
-      </p>
 
-      <div class="grid">
-        <article class="option">
-          <div>
-            <div class="version-tag">V1</div>
-            <h2>Versió 1</h2>
-            <p>
-              Estil romàntic i clàssic. És la proposta més elegant i tradicional,
-              amb una estètica càlida i molt pròpia d’una web de boda.
-            </p>
-          </div>
-          <a class="btn" href="v1.html">Veure V1</a>
-        </article>
+<div class="container">
 
-        <article class="option">
-          <div>
-            <div class="version-tag">V2</div>
-            <h2>Versió 2</h2>
-            <p>
-              Estil més fosc, sofisticat i cinematogràfic.
-              Té una sensació més premium i moderna, amb més contrast i força visual.
-            </p>
-          </div>
-          <a class="btn" href="v2.html">Veure V2</a>
-        </article>
+<div class="card">
 
-        <article class="option">
-          <div>
-            <div class="version-tag">V3</div>
-            <h2>Versió 3</h2>
-            <p>
-              Estil més fresc, lluminós i atrevit.
-              S’assembla més a una invitació digital moderna, amb una composició més visual i actual.
-            </p>
-          </div>
-          <a class="btn" href="v3.html">Veure V3</a>
-        </article>
-      </div>
+<h1>Cris & Oscar</h1>
 
-      <p class="footer-note">
-        Pots obrir cada proposta i comparar tranquil·lament quina encaixa millor amb el to que vols transmetre.
-      </p>
-    </section>
-  </main>
+<p>
+Revisa les tres opcions de disseny de la web i digue'm quina t’agrada més i quina opinió tens.
+</p>
+
+<div class="buttons">
+
+<a class="btn" href="v1.html">Versió 1</a>
+
+<a class="btn" href="v2.html">Versió 2</a>
+
+<a class="btn" href="v3.html">Versió 3</a>
+
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
