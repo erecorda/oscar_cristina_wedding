@@ -135,10 +135,12 @@ color:white;
 padding:90px 0;
 }
 
+/* HISTORIA FIX */
+
 .split{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+grid-template-columns:1.2fr 1.8fr;
+gap:60px;
 align-items:center;
 }
 
@@ -147,7 +149,17 @@ background:white;
 padding:40px;
 border-radius:var(--radius);
 box-shadow:var(--shadow);
+max-width:520px;
 }
+
+.story-img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:20px;
+}
+
+/* GALERIA */
 
 .gallery{
 display:grid;
@@ -184,6 +196,8 @@ max-width:90%;
 max-height:90%;
 }
 
+/* AGENDA */
+
 .agenda{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -198,6 +212,8 @@ border-radius:15px;
 text-align:center;
 box-shadow:var(--shadow);
 }
+
+/* LLOC */
 
 .location{
 background:
@@ -218,6 +234,8 @@ border-radius:20px;
 margin-top:30px;
 }
 
+/* HOTELS */
+
 .hotels{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -237,14 +255,23 @@ padding:60px;
 color:#777;
 }
 
+/* RESPONSIVE */
+
 @media(max-width:900px){
 
 .split{grid-template-columns:1fr}
+
 .gallery{grid-template-columns:1fr 1fr}
+
 .agenda{grid-template-columns:1fr 1fr}
+
 .hotels{grid-template-columns:1fr}
 
 .hero-content{padding:40px}
+
+.story-img{
+height:300px
+}
 
 }
 
@@ -297,7 +324,7 @@ color:#777;
 <p>Després de molts moments compartits, viatges i aventures, hem decidit celebrar aquest dia amb les persones que més estimem.</p>
 </div>
 
-<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" style="border-radius:20px">
+<img class="story-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80">
 
 </div>
 </section>
