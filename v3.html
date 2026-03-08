@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cris & Oscar · V3</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#fffaf4;
-      --paper:#ffffff;
-      --text:#181513;
-      --muted:#6d665f;
-      --accent:#ff7a59;
-      --accent-2:#ffd166;
-      --accent-3:#111111;
-      --soft:#f4ece2;
-      --line:rgba(24,21,19,.10);
-      --shadow:0 20px 50px rgba(0,0,0,.08);
-      --radius:30px;
-      --max:1240px;
+      --bg:#fcf7f1;
+      --paper:#fffdf9;
+      --text:#121212;
+      --muted:#6f675f;
+      --accent:#ff6b4a;
+      --accent-soft:#ffe2d9;
+      --accent-2:#ffd54f;
+      --line:rgba(18,18,18,.10);
+      --shadow:0 18px 40px rgba(0,0,0,.08);
+      --radius:28px;
+      --max:1280px;
     }
 
     *{box-sizing:border-box}
@@ -28,24 +27,28 @@
 
     body{
       margin:0;
-      font-family:Inter,sans-serif;
+      font-family:"Space Grotesk", sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(255,122,89,.12), transparent 22%),
-        radial-gradient(circle at top right, rgba(255,209,102,.14), transparent 18%),
-        linear-gradient(180deg, #fffaf4 0%, #fff7ef 100%);
-      line-height:1.6;
+        radial-gradient(circle at top left, rgba(255,107,74,.12), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(255,213,79,.14), transparent 18%),
+        var(--bg);
+      line-height:1.5;
     }
 
     h1,h2,h3,h4{
-      font-family:Syne,sans-serif;
       margin:0;
-      line-height:1;
+      line-height:.95;
       letter-spacing:-0.03em;
     }
 
+    .serif{
+      font-family:"Instrument Serif", serif;
+      font-weight:400;
+      letter-spacing:0;
+    }
+
     a{text-decoration:none;color:inherit}
-    p{margin:0 0 14px}
 
     .container{
       width:min(calc(100% - 32px), var(--max));
@@ -56,9 +59,9 @@
       position:sticky;
       top:0;
       z-index:100;
-      backdrop-filter:blur(12px);
-      background:rgba(255,250,244,.86);
-      border-bottom:1px solid rgba(24,21,19,.06);
+      background:rgba(252,247,241,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(18,18,18,.06);
     }
 
     .nav-inner{
@@ -70,116 +73,102 @@
     }
 
     .brand{
-      font-weight:800;
-      font-size:1rem;
+      font-weight:700;
       text-transform:uppercase;
       letter-spacing:.08em;
+      font-size:.95rem;
     }
 
     .nav-links{
       display:flex;
       flex-wrap:wrap;
       gap:18px;
-      color:var(--muted);
       font-size:.95rem;
+      color:var(--muted);
     }
 
     .nav-links a:hover{color:var(--text)}
 
     .hero{
-      padding:24px 0 18px;
+      padding:20px 0 16px;
     }
 
-    .hero-grid{
+    .hero-layout{
       display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:20px;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
       align-items:stretch;
     }
 
-    .hero-left,
-    .hero-right{
-      border-radius:34px;
-      overflow:hidden;
+    .hero-text{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:36px;
       box-shadow:var(--shadow);
-    }
-
-    .hero-left{
-      background:var(--accent-3);
-      color:white;
-      padding:34px;
+      padding:36px;
+      min-height:84vh;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      min-height:84vh;
       position:relative;
-      isolation:isolate;
+      overflow:hidden;
     }
 
-    .hero-left::before{
+    .hero-text::before{
       content:"";
       position:absolute;
-      inset:auto -60px -80px auto;
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      background:var(--accent);
-      opacity:.18;
-      z-index:-1;
-    }
-
-    .hero-left::after{
-      content:"";
-      position:absolute;
-      inset:40px auto auto -70px;
+      top:-50px;
+      right:-50px;
       width:180px;
       height:180px;
       border-radius:50%;
-      background:var(--accent-2);
-      opacity:.12;
-      z-index:-1;
+      background:var(--accent-soft);
+      z-index:0;
     }
 
-    .hero-topline{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      align-items:flex-start;
-      color:rgba(255,255,255,.78);
-      font-size:.92rem;
+    .hero-top{
+      position:relative;
+      z-index:1;
     }
 
-    .hero-title{
-      margin:26px 0 20px;
-    }
-
-    .hero-title .mini{
-      display:inline-block;
+    .hero-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:8px 14px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      color:#f5d8cf;
-      font-size:.86rem;
+      background:#fff3ef;
+      border:1px solid rgba(255,107,74,.18);
+      color:#b3472f;
+      font-size:.88rem;
+      font-weight:700;
       margin-bottom:18px;
     }
 
-    .hero-title h1{
-      font-size:clamp(3.2rem, 8vw, 6.8rem);
-      margin-bottom:14px;
+    .hero h1{
+      font-size:clamp(3.4rem, 8vw, 7rem);
+      margin-bottom:18px;
     }
 
-    .hero-title p{
-      max-width:54ch;
-      color:rgba(255,255,255,.84);
-      font-size:1.02rem;
+    .hero h1 .serif{
+      display:block;
+      font-size:.92em;
+      font-style:italic;
     }
+
+    .hero-copy{
+      max-width:58ch;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .hero-copy p{margin:0 0 14px}
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:28px;
+      margin-top:26px;
     }
 
     .btn{
@@ -187,93 +176,139 @@
       align-items:center;
       justify-content:center;
       min-height:50px;
-      padding:0 18px;
+      padding:0 20px;
       border-radius:999px;
       font-weight:700;
-      transition:.2s ease;
       border:1px solid transparent;
+      transition:.2s ease;
       cursor:pointer;
     }
 
     .btn:hover{transform:translateY(-1px)}
+
     .btn-primary{
-      background:var(--accent);
+      background:var(--text);
       color:white;
-    }
-    .btn-secondary{
-      background:transparent;
-      color:white;
-      border-color:rgba(255,255,255,.16);
     }
 
-    .hero-footer{
+    .btn-secondary{
+      background:white;
+      color:var(--text);
+      border-color:var(--line);
+    }
+
+    .hero-bottom{
+      position:relative;
+      z-index:1;
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:12px;
       margin-top:28px;
     }
 
-    .count-box{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:20px;
+    .count{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
       padding:16px 10px;
       text-align:center;
     }
 
-    .count-box .n{
-      font-family:Syne,sans-serif;
+    .count .n{
       font-size:2rem;
-      font-weight:800;
-      margin-bottom:4px;
-    }
-
-    .count-box .l{
-      font-size:.82rem;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      color:rgba(255,255,255,.68);
-    }
-
-    .hero-right{
-      background:
-        linear-gradient(rgba(255,255,255,.06), rgba(255,255,255,.06)),
-        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=80")
-        center/cover no-repeat;
-      min-height:84vh;
-      position:relative;
-    }
-
-    .date-stamp{
-      position:absolute;
-      right:20px;
-      bottom:20px;
-      background:rgba(255,250,244,.92);
-      color:var(--text);
-      padding:18px 18px 16px;
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      min-width:180px;
-    }
-
-    .date-stamp strong{
-      display:block;
-      font-family:Syne,sans-serif;
-      font-size:2.2rem;
+      font-weight:700;
       line-height:1;
       margin-bottom:4px;
     }
 
-    .date-stamp span{
+    .count .l{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
       color:var(--muted);
-      font-size:.92rem;
+    }
+
+    .hero-visual{
+      display:grid;
+      grid-template-rows:1.25fr .75fr;
+      gap:18px;
+      min-height:84vh;
+    }
+
+    .visual-main,
+    .visual-side{
+      border-radius:36px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .visual-main{
+      background:
+        linear-gradient(rgba(0,0,0,.14), rgba(0,0,0,.22)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=80")
+        center/cover no-repeat;
+      position:relative;
+    }
+
+    .stamp{
+      position:absolute;
+      left:22px;
+      bottom:22px;
+      background:rgba(255,255,255,.94);
+      border-radius:22px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+    }
+
+    .stamp strong{
+      display:block;
+      font-size:2rem;
+      line-height:1;
+      margin-bottom:4px;
+    }
+
+    .stamp span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .visual-side{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      background:var(--text);
+      color:white;
+    }
+
+    .side-block{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border-right:1px solid rgba(255,255,255,.08);
+    }
+
+    .side-block:last-child{border-right:none}
+
+    .side-block .label{
+      color:rgba(255,255,255,.6);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.78rem;
+      margin-bottom:8px;
+    }
+
+    .side-block .value{
+      font-size:1.4rem;
+      font-weight:700;
+      line-height:1.1;
     }
 
     .section{
-      padding:22px 0 18px;
+      padding:20px 0 16px;
     }
 
-    .section-head{
+    .section-title{
       display:flex;
       justify-content:space-between;
       align-items:end;
@@ -281,65 +316,73 @@
       margin-bottom:18px;
     }
 
-    .section-head h2{
-      font-size:3rem;
+    .section-title h2{
+      font-size:clamp(2.4rem, 5vw, 4rem);
     }
 
-    .section-head p{
-      color:var(--muted);
-      max-width:620px;
+    .section-title p{
       margin:0;
+      max-width:640px;
+      color:var(--muted);
     }
 
-    .story-layout{
+    .story{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
+      grid-template-columns:.8fr 1.2fr;
+      gap:18px;
+      align-items:stretch;
     }
 
-    .card{
-      background:var(--paper);
-      border:1px solid var(--line);
+    .story-note{
+      background:var(--text);
+      color:white;
       border-radius:30px;
+      padding:30px;
       box-shadow:var(--shadow);
-    }
-
-    .story-card{
-      padding:34px;
       display:flex;
       flex-direction:column;
-      justify-content:center;
+      justify-content:space-between;
       min-height:420px;
     }
 
-    .story-card h2{
-      font-size:3.2rem;
-      margin-bottom:16px;
+    .story-note h2{
+      font-size:3rem;
+      margin-bottom:18px;
     }
 
-    .story-card p{
-      color:var(--muted);
-      font-size:1.02rem;
+    .story-note p{
+      color:rgba(255,255,255,.76);
+      margin:0 0 14px;
     }
 
-    .story-quote{
-      margin-top:12px;
-      color:var(--accent);
-      font-weight:700;
+    .story-note strong{
+      color:white;
     }
 
-    .story-visual{
-      min-height:420px;
+    .story-gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .story-gallery .img{
       border-radius:30px;
       overflow:hidden;
       box-shadow:var(--shadow);
-      background:
-        linear-gradient(rgba(255,122,89,.08), rgba(255,122,89,.08)),
-        url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=80")
-        center/cover no-repeat;
+      min-height:420px;
+      background-size:cover;
+      background-position:center;
     }
 
-    .agenda-grid{
+    .img-a{
+      background-image:url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80");
+    }
+
+    .img-b{
+      background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
+    }
+
+    .agenda-layout{
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:16px;
@@ -350,57 +393,74 @@
       border:1px solid var(--line);
       border-radius:26px;
       box-shadow:var(--shadow);
-      padding:24px;
-      min-height:210px;
+      padding:22px;
+      min-height:220px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+      position:relative;
+      overflow:hidden;
     }
 
-    .agenda-number{
-      font-family:Syne,sans-serif;
-      font-size:.88rem;
-      color:var(--accent);
-      font-weight:800;
-      letter-spacing:.08em;
+    .agenda-item::after{
+      content:"";
+      position:absolute;
+      right:-24px;
+      top:-24px;
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      background:var(--accent-soft);
+    }
+
+    .agenda-item .time{
+      position:relative;
+      z-index:1;
+      font-weight:700;
+      color:#b3472f;
+      font-size:.92rem;
+      letter-spacing:.06em;
       text-transform:uppercase;
     }
 
     .agenda-item h3{
+      position:relative;
+      z-index:1;
       font-size:2rem;
       margin:10px 0 8px;
     }
 
     .agenda-item p{
+      position:relative;
+      z-index:1;
       color:var(--muted);
       margin:0;
     }
 
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(12,1fr);
+      grid-template-columns:2fr 1fr 1fr;
       gap:16px;
     }
 
     .gallery-grid img{
       width:100%;
-      height:100%;
+      height:320px;
       object-fit:cover;
+      border-radius:26px;
       display:block;
-      border-radius:28px;
-      box-shadow:var(--shadow);
       cursor:pointer;
+      box-shadow:var(--shadow);
       transition:.25s ease;
-      min-height:260px;
+    }
+
+    .gallery-grid img:first-child{
+      height:100%;
+      min-height:656px;
+      grid-row:span 2;
     }
 
     .gallery-grid img:hover{transform:scale(1.02)}
-
-    .g1{grid-column:span 7; min-height:520px}
-    .g2{grid-column:span 5}
-    .g3{grid-column:span 5}
-    .g4{grid-column:span 4}
-    .g5{grid-column:span 3}
 
     .lightbox{
       position:fixed;
@@ -421,62 +481,70 @@
 
     .location-layout{
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:20px;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .map-card iframe{
+      width:100%;
+      height:100%;
+      min-height:500px;
+      border:none;
+      border-radius:30px;
+      display:block;
+      box-shadow:var(--shadow);
     }
 
     .location-card{
-      padding:34px;
-      min-height:460px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      padding:32px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      background:linear-gradient(135deg, #fff 0%, #fff7ef 100%);
     }
 
     .location-card h2{
       font-size:3.2rem;
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
 
     .location-card p{
       color:var(--muted);
     }
 
-    .pill-list{
+    .tag-list{
       display:grid;
       gap:12px;
       margin:22px 0 24px;
     }
 
-    .pill{
-      background:rgba(255,122,89,.06);
-      border:1px solid rgba(255,122,89,.14);
+    .tag{
+      background:var(--soft);
+      border:1px solid var(--line);
       border-radius:18px;
       padding:14px 16px;
     }
 
-    .pill strong{
+    .tag strong{
       display:block;
-      margin-bottom:3px;
+      margin-bottom:2px;
     }
 
-    .map-card iframe{
-      width:100%;
-      height:100%;
-      min-height:460px;
-      border:none;
-      border-radius:30px;
-      display:block;
-    }
-
-    .hotel-grid{
+    .hotels{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
     .hotel{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:var(--shadow);
       padding:24px;
     }
 
@@ -490,21 +558,25 @@
       margin:0;
     }
 
-    .assist-card{
+    .assist{
+      background:linear-gradient(135deg, #fff 0%, #fff4ef 100%);
+      border:1px solid rgba(255,107,74,.12);
+      border-radius:32px;
+      box-shadow:var(--shadow);
       padding:34px;
-      max-width:860px;
+      max-width:900px;
       margin:0 auto;
       text-align:center;
     }
 
-    .assist-card h2{
+    .assist h2{
       font-size:3rem;
       margin-bottom:12px;
     }
 
-    .assist-card p{
+    .assist p{
       color:var(--muted);
-      max-width:640px;
+      max-width:650px;
       margin:0 auto 12px;
     }
 
@@ -518,7 +590,7 @@
     }
 
     .assist-list li{
-      background:var(--soft);
+      background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
       padding:14px 16px;
@@ -532,32 +604,32 @@
     }
 
     @media (max-width: 1100px){
-      .hero-grid,
-      .story-layout,
+      .hero-layout,
+      .story,
       .location-layout{
         grid-template-columns:1fr;
       }
 
-      .agenda-grid{
+      .agenda-layout{
         grid-template-columns:repeat(2,1fr);
       }
 
-      .hotel-grid{
+      .hotels{
         grid-template-columns:1fr;
       }
 
-      .hero-left,
-      .hero-right{
-        min-height:64vh;
-      }
-
       .gallery-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr 1fr;
       }
 
-      .g1,.g2,.g3,.g4,.g5{
-        grid-column:auto;
-        min-height:300px;
+      .gallery-grid img:first-child{
+        grid-row:auto;
+        min-height:320px;
+      }
+
+      .hero-text,
+      .hero-right{
+        min-height:unset;
       }
     }
 
@@ -567,47 +639,39 @@
         align-items:flex-start;
       }
 
-      .hero-left{
+      .hero-text,
+      .story-note,
+      .location-card,
+      .assist{
         padding:24px;
       }
 
-      .hero-title h1{
-        font-size:3.4rem;
-      }
-
-      .hero-footer{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .section-head{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .agenda-grid,
+      .hero-bottom,
+      .agenda-layout,
       .gallery-grid{
         grid-template-columns:1fr;
       }
 
-      .count-box,
-      .story-card,
-      .agenda-item,
-      .location-card,
-      .hotel,
-      .assist-card{
-        padding:22px;
+      .story-gallery{
+        grid-template-columns:1fr;
       }
 
-      .story-card h2,
+      .story-gallery .img{
+        min-height:280px;
+      }
+
+      .hero h1,
+      .story-note h2,
       .location-card h2,
-      .assist-card h2,
-      .section-head h2{
-        font-size:2.5rem;
+      .assist h2,
+      .section-title h2{
+        font-size:2.7rem;
       }
 
-      .hero-right,
-      .story-visual{
-        min-height:320px;
+      .gallery-grid img,
+      .gallery-grid img:first-child{
+        min-height:280px;
+        height:280px;
       }
     }
   </style>
@@ -628,92 +692,114 @@
   </nav>
 
   <header id="top" class="hero">
-    <div class="container hero-grid">
-      <section class="hero-left">
-        <div>
-          <div class="hero-topline">
-            <span>Cris & Oscar</span>
-            <span>Masia Can Magí · Sant Cugat</span>
+    <div class="container hero-layout">
+      <section class="hero-text">
+        <div class="hero-top">
+          <div class="hero-tag">18 de setembre de 2026 · Masia Can Magí</div>
+
+          <h1>Cris <span class="serif">&amp; Oscar</span></h1>
+
+          <div class="hero-copy">
+            <p>Ens casem! Ens fa moltíssima il·lusió compartir amb tu que el 18 de setembre de 2026 celebrarem la nostra boda a Masia Can Magí, a Sant Cugat del Vallès.</p>
+            <p>Serà un dia molt especial, envoltats de les persones que estimem de debò. Ens encantaria que formessis part d’aquest moment tan important per a nosaltres.</p>
+            <p>Apunta la data a l’agenda. Molt aviat t’explicarem més detalls. Gràcies per ser a les nostres vides.</p>
           </div>
 
-          <div class="hero-title">
-            <div class="mini">18 de setembre de 2026</div>
-            <h1>Ens casem</h1>
-            <p>Ens fa moltíssima il·lusió compartir amb vosaltres que el 18 de setembre de 2026 celebrarem la nostra boda a Masia Can Magí, a Sant Cugat del Vallès.</p>
-            <p>Serà un dia molt especial, envoltats de les persones que estimem de debò. Ens encantaria que forméssiu part d’aquest moment tan important per a nosaltres.</p>
-            <p>Apunteu la data a l’agenda. Molt aviat us explicarem més detalls. Gràcies per ser a les nostres vides.</p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
-              <a class="btn btn-secondary" href="#lloc">Veure ubicació</a>
-            </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
+            <a class="btn btn-secondary" href="#lloc">Veure ubicació</a>
           </div>
         </div>
 
-        <div class="hero-footer">
-          <div class="count-box"><div class="n" id="days">--</div><div class="l">Dies</div></div>
-          <div class="count-box"><div class="n" id="hours">--</div><div class="l">Hores</div></div>
-          <div class="count-box"><div class="n" id="minutes">--</div><div class="l">Minuts</div></div>
-          <div class="count-box"><div class="n" id="seconds">--</div><div class="l">Segons</div></div>
+        <div class="hero-bottom">
+          <div class="count"><div class="n" id="days">--</div><div class="l">Dies</div></div>
+          <div class="count"><div class="n" id="hours">--</div><div class="l">Hores</div></div>
+          <div class="count"><div class="n" id="minutes">--</div><div class="l">Minuts</div></div>
+          <div class="count"><div class="n" id="seconds">--</div><div class="l">Segons</div></div>
         </div>
       </section>
 
-      <section class="hero-right">
-        <div class="date-stamp">
-          <strong>18</strong>
-          <span>setembre 2026<br>Masia Can Magí</span>
+      <section class="hero-visual">
+        <div class="visual-main">
+          <div class="stamp">
+            <strong>18</strong>
+            <span>setembre 2026<br>Masia Can Magí</span>
+          </div>
+        </div>
+
+        <div class="visual-side">
+          <div class="side-block">
+            <div class="label">Lloc</div>
+            <div class="value">Masia Can Magí</div>
+          </div>
+          <div class="side-block">
+            <div class="label">Ciutat</div>
+            <div class="value">Sant Cugat</div>
+          </div>
         </div>
       </section>
     </div>
   </header>
 
   <section id="historia" class="section">
-    <div class="container story-layout">
-      <article class="card story-card">
+    <div class="container">
+      <div class="section-title">
         <h2>La nostra història</h2>
-        <p>Ens fa immensament feliços poder compartir aquesta notícia amb vosaltres: el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.</p>
-        <p>Hem imaginat aquesta celebració a Masia Can Magí com un dia ple d’afecte, de persones estimades i de moments que recordarem sempre.</p>
-        <p class="story-quote">Cris & Oscar us esperem!</p>
-      </article>
+        <p>La mateixa informació, però amb una presentació molt més visual i allunyada del llenguatge clàssic de les altres versions.</p>
+      </div>
 
-      <div class="story-visual"></div>
+      <div class="story">
+        <article class="story-note">
+          <div>
+            <h2>Un dia molt especial</h2>
+            <p>Ens fa immensament feliços poder compartir aquesta notícia amb tu: el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.</p>
+            <p>Hem imaginat aquesta celebració a Masia Can Magí com un dia ple d’afecte, de persones estimades i de moments que recordarem sempre.</p>
+          </div>
+          <div><strong>Cris & Oscar t’esperen!</strong></div>
+        </article>
+
+        <div class="story-gallery">
+          <div class="img img-a"></div>
+          <div class="img img-b"></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="agenda" class="section">
     <div class="container">
-      <div class="section-head">
+      <div class="section-title">
         <h2>Agenda del dia</h2>
-        <p>La mateixa informació, però presentada com una invitació digital més moderna i atrevida.</p>
+        <p>Una versió més gràfica i moderna, gairebé com si fos un petit pòster digital.</p>
       </div>
 
-      <div class="agenda-grid">
-        <article class="agenda-item card">
-          <div class="agenda-number">17:30</div>
+      <div class="agenda-layout">
+        <article class="agenda-item">
+          <div class="time">17:30</div>
           <div>
             <h3>Arribada</h3>
             <p>Recepció dels convidats a la masia.</p>
           </div>
         </article>
 
-        <article class="agenda-item card">
-          <div class="agenda-number">18:00</div>
+        <article class="agenda-item">
+          <div class="time">18:00</div>
           <div>
             <h3>Cerimònia</h3>
             <p>El moment més especial del dia.</p>
           </div>
         </article>
 
-        <article class="agenda-item card">
-          <div class="agenda-number">19:00</div>
+        <article class="agenda-item">
+          <div class="time">19:00</div>
           <div>
             <h3>Còctel</h3>
             <p>Brindis, trobades i primers records.</p>
           </div>
         </article>
 
-        <article class="agenda-item card">
-          <div class="agenda-number">21:00</div>
+        <article class="agenda-item">
+          <div class="time">21:00</div>
           <div>
             <h3>Sopar</h3>
             <p>Celebració, sopar i una gran nit plegats.</p>
@@ -725,17 +811,17 @@
 
   <section id="galeria" class="section">
     <div class="container">
-      <div class="section-head">
+      <div class="section-title">
         <h2>Galeria</h2>
-        <p>Una tercera lectura visual: més fresca, més viva i més digital.</p>
+        <p>Una composició molt més editorial i dinàmica que la V1 i la V2.</p>
       </div>
 
       <div class="gallery-grid">
-        <img class="g1" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80" alt="Decoració elegant de boda">
-        <img class="g2" src="https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?auto=format&fit=crop&w=1400&q=80" alt="Taula elegant de boda">
-        <img class="g3" src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1400&q=80" alt="Brindis de celebració">
-        <img class="g4" src="https://images.unsplash.com/photo-1519741347686-c1e331fcbebd?auto=format&fit=crop&w=1400&q=80" alt="Decoració floral de boda">
-        <img class="g5" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=80" alt="Celebració romàntica">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80" alt="Decoració elegant de boda">
+        <img src="https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?auto=format&fit=crop&w=1400&q=80" alt="Taula elegant de boda">
+        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1400&q=80" alt="Brindis de celebració">
+        <img src="https://images.unsplash.com/photo-1519741347686-c1e331fcbebd?auto=format&fit=crop&w=1400&q=80" alt="Decoració floral de boda">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=80" alt="Celebració romàntica">
       </div>
     </div>
   </section>
@@ -745,59 +831,66 @@
   </div>
 
   <section id="lloc" class="section">
-    <div class="container location-layout">
-      <article class="card location-card">
-        <div>
-          <h2>Masia Can Magí</h2>
-          <p>Ens veurem en aquest espai tan especial per celebrar un dia que volem compartir amb tota la gent que estimem.</p>
+    <div class="container">
+      <div class="section-title">
+        <h2>Lloc de la celebració</h2>
+        <p>Mateixa informació, però distribuïda amb una composició més atrevida i actual.</p>
+      </div>
 
-          <div class="pill-list">
-            <div class="pill">
-              <strong>Lloc</strong>
-              Masia Can Magí
-            </div>
-            <div class="pill">
-              <strong>Adreça</strong>
-              Avinguda de Can Magí, 5 · 08173 Sant Cugat del Vallès
-            </div>
-            <div class="pill">
-              <strong>Data</strong>
-              18 de setembre de 2026
-            </div>
-          </div>
+      <div class="location-layout">
+        <div class="map-card">
+          <iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe>
         </div>
 
-        <div>
+        <article class="location-card">
+          <div>
+            <h2>Masia Can Magí</h2>
+            <p>Ens veurem en aquest espai tan especial per celebrar un dia que volem compartir amb tota la gent que estimem.</p>
+
+            <div class="tag-list">
+              <div class="tag">
+                <strong>Lloc</strong>
+                Masia Can Magí
+              </div>
+              <div class="tag">
+                <strong>Adreça</strong>
+                Avinguda de Can Magí, 5 · 08173 Sant Cugat del Vallès
+              </div>
+              <div class="tag">
+                <strong>Data</strong>
+                18 de setembre de 2026
+              </div>
+            </div>
+          </div>
+
           <a class="btn btn-primary" target="_blank" rel="noopener noreferrer"
              href="https://www.google.com/maps/search/?api=1&query=Masia+Can+Magi+Sant+Cugat+del+Valles">
             Obrir a Google Maps
           </a>
-        </div>
-      </article>
-
-      <div class="card map-card">
-        <iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-head">
+      <div class="section-title">
         <h2>Hotels recomanats</h2>
-        <p>Algunes opcions pràctiques per als convidats que vinguin de fora o vulguin quedar-se a prop.</p>
+        <p>Algunes opcions pràctiques per si vols quedar-te a prop.</p>
       </div>
 
-      <div class="hotel-grid">
-        <article class="card hotel">
+      <div class="hotels">
+        <article class="hotel">
           <h3>Hotel Sant Cugat</h3>
           <p>A prop del centre i ben comunicat amb la masia.</p>
         </article>
-        <article class="card hotel">
+
+        <article class="hotel">
           <h3>AC Hotel Sant Cugat</h3>
-          <p>Una opció còmoda per a convidats que venen de fora.</p>
+          <p>Una opció còmoda si vens de fora.</p>
         </article>
-        <article class="card hotel">
+
+        <article class="hotel">
           <h3>B&amp;B Hotel Sant Cugat</h3>
           <p>Alternativa pràctica i més econòmica per passar la nit.</p>
         </article>
@@ -807,16 +900,16 @@
 
   <section id="assistencia" class="section">
     <div class="container">
-      <article class="card assist-card">
+      <article class="assist">
         <h2>Confirmació d'assistència</h2>
         <p>Molt aviat afegirem el formulari per confirmar assistència.</p>
-        <p>Quan estigui disponible, podreu indicar:</p>
+        <p>Quan estigui disponible, hi podràs indicar:</p>
 
         <ul class="assist-list">
-          <li>Si podreu acompanyar-nos el dia de la boda</li>
+          <li>Si podràs acompanyar-nos el dia de la boda</li>
           <li>Intoleràncies o al·lèrgies alimentàries</li>
           <li>Nombre d’acompanyants</li>
-          <li>Si necessitareu ajuda amb el transport</li>
+          <li>Si necessitaràs ajuda amb el transport</li>
         </ul>
 
         <a class="btn btn-primary" href="javascript:void(0)">Formulari properament</a>
