@@ -22,7 +22,6 @@
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
 
     body{
@@ -74,13 +73,15 @@
       gap:18px;
     }
 
-    nav a{
+    nav .links a{
       text-decoration:none;
       color:var(--muted);
       font-weight:500;
     }
 
-    nav a:hover{color:var(--text)}
+    nav .links a:hover{
+      color:var(--text);
+    }
 
     .hero{
       padding:40px 0;
@@ -93,8 +94,8 @@
       align-items:end;
       overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.62)),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
+        linear-gradient(rgba(0,0,0,.36),rgba(0,0,0,.62)),
+        url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=80")
         center/cover fixed;
       box-shadow:var(--shadow);
     }
@@ -102,7 +103,7 @@
     .hero-content{
       color:white;
       padding:60px;
-      max-width:760px;
+      max-width:780px;
     }
 
     .hero h1{
@@ -113,6 +114,7 @@
     .hero p{
       font-size:1.08rem;
       max-width:58ch;
+      margin:0 0 14px;
     }
 
     .eyebrow{
@@ -155,7 +157,9 @@
       transition:.2s ease;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-primary{
       background:var(--gold);
@@ -260,7 +264,7 @@
 
     .location{
       background:
-        linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.55)),
+        linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.58)),
         url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80")
         center/cover;
       color:white;
@@ -365,16 +369,20 @@
     <div class="hero-card">
       <div class="hero-content">
 
-        <div class="eyebrow">18 de setembre de 2026 · Sant Cugat del Vallès</div>
+        <div class="eyebrow">18 de setembre de 2026 · Masia Can Magí</div>
 
         <h1>Cris & Oscar</h1>
 
         <p>
-          Ens casem! Ens fa moltíssima il·lusió compartir amb vosaltres que el 18 de setembre de 2026 celebrarem la nostra boda a Sant Cugat del Vallès. Un dia que somiem especial, envoltats de les persones que estimem de debò.
+          Ens casem! Ens fa moltíssima il·lusió compartir amb vosaltres que el 18 de setembre de 2026 celebrarem la nostra boda a Masia Can Magí, a Sant Cugat del Vallès.
         </p>
 
         <p>
-          Ens encantaria que forméssiu part d’aquest moment tan important per a nosaltres. Apunteu la data a l’agenda: molt aviat compartirem més detalls.
+          Serà un dia molt especial, envoltats de les persones que estimem de debò. Ens encantaria que forméssiu part d’aquest moment tan important per a nosaltres.
+        </p>
+
+        <p>
+          Apunteu la data a l’agenda. Molt aviat us explicarem més detalls. Gràcies per ser a les nostres vides. Esperem celebrar junts un dia ple d’afecte i de records bonics.
         </p>
 
         <div class="countdown">
@@ -397,17 +405,17 @@
       <div class="card story-card">
         <h2>La nostra història</h2>
         <p>
-          Ens fa molt feliços poder anunciar que el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.
+          Ens fa immensament feliços poder compartir aquesta notícia amb vosaltres: el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.
         </p>
         <p>
-          Hem imaginat aquesta celebració com un dia ple d’afecte, de persones estimades i de records bonics. Gràcies per formar part del nostre camí.
+          Hem imaginat aquesta celebració a Masia Can Magí com un dia ple d’afecte, de persones estimades i de moments que recordarem sempre.
         </p>
         <p>
           <strong>Cris & Oscar us esperem!</strong>
         </p>
       </div>
 
-      <img class="story-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" alt="Imatge romàntica de celebració">
+      <img class="story-img" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80" alt="Celebració elegant de boda">
 
     </div>
   </section>
@@ -433,9 +441,9 @@
       <h2 style="text-align:center">Galeria</h2>
 
       <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=1200&q=80" alt="Foto de celebració 1">
-        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80" alt="Foto de celebració 2">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto de celebració 3">
+        <img src="https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?auto=format&fit=crop&w=1400&q=80" alt="Taula elegant de boda">
+        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1400&q=80" alt="Brindis de celebració">
+        <img src="https://images.unsplash.com/photo-1519741347686-c1e331fcbebd?auto=format&fit=crop&w=1400&q=80" alt="Decoració floral de boda">
       </div>
 
     </div>
@@ -448,17 +456,17 @@
   <section id="lloc" class="location">
     <div class="container">
 
-      <h2>Sant Cugat del Vallès</h2>
+      <h2>Masia Can Magí</h2>
 
       <p>
-        El 18 de setembre de 2026 celebrarem la nostra boda a Sant Cugat del Vallès. Ben aviat compartirem tots els detalls exactes del lloc i de l’organització del dia.
+        Avinguda de Can Magí, 5 · 08173 Sant Cugat del Vallès
       </p>
 
       <p>
-        De moment, reserveu la data i prepareu-vos per viure-ho amb nosaltres.
+        Ens veurem en aquest espai tan especial per celebrar un dia que volem compartir amb tota la gent que estimem.
       </p>
 
-      <iframe src="https://maps.google.com/maps?q=Sant%20Cugat%20del%20Vall%C3%A8s&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mapa de Sant Cugat del Vallès"></iframe>
+      <iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe>
 
     </div>
   </section>
@@ -471,17 +479,17 @@
       <div class="hotels">
         <div class="hotel">
           <h3>Hotel Sant Cugat</h3>
-          <p>A prop del centre i ben comunicat.</p>
+          <p>A prop del centre i ben comunicat amb la masia.</p>
         </div>
 
         <div class="hotel">
           <h3>AC Hotel Sant Cugat</h3>
-          <p>Una opció còmoda per a convidats de fora.</p>
+          <p>Una opció còmoda per a convidats que venen de fora.</p>
         </div>
 
         <div class="hotel">
           <h3>B&amp;B Hotel Sant Cugat</h3>
-          <p>Alternativa pràctica i més econòmica.</p>
+          <p>Alternativa pràctica i més econòmica per passar la nit.</p>
         </div>
       </div>
 
@@ -518,7 +526,7 @@
   </section>
 
   <footer>
-    Cris & Oscar · 18 setembre 2026 · Sant Cugat del Vallès
+    Cris & Oscar · 18 setembre 2026 · Masia Can Magí
   </footer>
 
   <script>
