@@ -14,7 +14,7 @@
 --text:#2c2a28;
 --muted:#6e675f;
 --gold:#b89563;
---shadow:0 20px 40px rgba(0,0,0,.12);
+--shadow:0 20px 45px rgba(0,0,0,.12);
 --radius:20px;
 --max:1200px;
 }
@@ -207,6 +207,20 @@ border-radius:15px;
 box-shadow:var(--shadow);
 }
 
+.transport{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+.transport div{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:var(--shadow);
+}
+
 .faq{
 margin-top:40px;
 }
@@ -231,6 +245,7 @@ color:#777;
 .gallery{grid-template-columns:1fr 1fr}
 .agenda{grid-template-columns:1fr 1fr}
 .hotels{grid-template-columns:1fr}
+.transport{grid-template-columns:1fr}
 
 .hero-content{padding:40px}
 
@@ -308,6 +323,7 @@ color:#777;
 <div><h3>23:30</h3>Festa</div>
 
 </div>
+
 </div>
 </section>
 
@@ -371,6 +387,46 @@ Obrir Google Maps
 <h3>B&B Hotel Sant Cugat</h3>
 <p>Opció econòmica</p>
 </div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 style="text-align:center">Transport</h2>
+
+<div class="transport">
+
+<div>
+<h3>Taxi</h3>
+<p>Recomanem reservar taxi per tornar de la festa.</p>
+</div>
+
+<div>
+<h3>Aparcament</h3>
+<p>La masia disposa de zona d'aparcament per convidats.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 style="text-align:center">Preguntes freqüents</h2>
+
+<div class="faq">
+
+<div><strong>Hi ha dress code?</strong><br>Formal / elegant.</div>
+
+<div><strong>Puc portar acompanyant?</strong><br>Si està indicat a la invitació.</div>
+
+<div><strong>Hi haurà opcions vegetarianes?</strong><br>Sí, indiqueu-ho al formulari.</div>
 
 </div>
 
