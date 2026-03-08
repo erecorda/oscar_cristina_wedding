@@ -1,465 +1,569 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cris & Oscar · 18 setembre 2026</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<title>Oscar & Cristina · 5 setembre 2026</title>
+  <style>
+    :root{
+      --gold:#b89563;
+      --gold-dark:#9f7f51;
+      --bg:#f6f2ec;
+      --paper:#fffdfa;
+      --text:#2c2a28;
+      --muted:#6e675f;
+      --max:1200px;
+      --radius:20px;
+      --shadow:0 30px 60px rgba(0,0,0,.15);
+      --line:rgba(44,42,40,.10);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    *{box-sizing:border-box}
 
-<style>
+    html{scroll-behavior:smooth}
 
-:root{
---gold:#b89563;
---bg:#f6f2ec;
---text:#2c2a28;
---muted:#6e675f;
---max:1200px;
---radius:20px;
---shadow:0 30px 60px rgba(0,0,0,.15);
-}
+    body{
+      margin:0;
+      font-family:Inter,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-*{box-sizing:border-box}
+    h1,h2,h3{
+      font-family:"Playfair Display",serif;
+      margin-top:0;
+      line-height:1.1;
+    }
 
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.6;
-}
+    .container{
+      width:min(92%,var(--max));
+      margin:auto;
+    }
 
-html{
-scroll-behavior:smooth;
-}
+    nav{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #eee;
+      z-index:100;
+    }
 
-h1,h2,h3{
-font-family:"Playfair Display",serif;
-margin-top:0;
-}
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+      gap:18px;
+    }
 
-.container{
-width:min(92%,var(--max));
-margin:auto;
-}
+    .brand{
+      font-weight:700;
+      font-size:1.1rem;
+      color:var(--text);
+      text-decoration:none;
+    }
 
-nav{
-position:sticky;
-top:0;
-background:white;
-border-bottom:1px solid #eee;
-z-index:100;
-}
+    nav .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+    }
 
-.nav-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:500;
+    }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:var(--muted);
-font-weight:500;
-}
+    nav a:hover{color:var(--text)}
 
-.hero{
-padding:40px 0;
-}
+    .hero{
+      padding:40px 0;
+    }
 
-.hero-card{
-min-height:90vh;
-border-radius:30px;
-display:flex;
-align-items:end;
+    .hero-card{
+      min-height:90vh;
+      border-radius:30px;
+      display:flex;
+      align-items:end;
+      overflow:hidden;
+      background:
+        linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.62)),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
+        center/cover fixed;
+      box-shadow:var(--shadow);
+    }
 
-background:
-linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),
-url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80")
-center/cover fixed;
+    .hero-content{
+      color:white;
+      padding:60px;
+      max-width:760px;
+    }
 
-box-shadow:var(--shadow);
-}
+    .hero h1{
+      font-size:clamp(42px,6vw,76px);
+      margin-bottom:14px;
+    }
 
-.hero-content{
-color:white;
-padding:60px;
-max-width:650px;
-}
+    .hero p{
+      font-size:1.08rem;
+      max-width:58ch;
+    }
 
-.hero h1{
-font-size:clamp(40px,6vw,72px);
-}
+    .eyebrow{
+      border:1px solid rgba(255,255,255,.6);
+      display:inline-block;
+      padding:6px 14px;
+      border-radius:30px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
 
-.eyebrow{
-border:1px solid rgba(255,255,255,.6);
-display:inline-block;
-padding:6px 14px;
-border-radius:30px;
-font-size:14px;
-}
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:24px;
+      max-width:560px;
+    }
 
-.countdown{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-margin-top:20px;
-}
+    .count{
+      background:rgba(255,255,255,.18);
+      padding:18px;
+      text-align:center;
+      border-radius:12px;
+      backdrop-filter:blur(6px);
+    }
 
-.count{
-background:rgba(255,255,255,.2);
-padding:18px;
-text-align:center;
-border-radius:12px;
-}
+    .count h2{
+      margin:0 0 4px;
+      font-size:2rem;
+    }
 
-.btn{
-display:inline-block;
-padding:14px 24px;
-border-radius:30px;
-text-decoration:none;
-margin-top:20px;
-font-weight:500;
-}
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:30px;
+      text-decoration:none;
+      margin-top:22px;
+      font-weight:600;
+      transition:.2s ease;
+    }
 
-.btn-primary{
-background:var(--gold);
-color:white;
-}
+    .btn:hover{transform:translateY(-1px)}
 
-.section{
-padding:90px 0;
-}
+    .btn-primary{
+      background:var(--gold);
+      color:white;
+    }
 
-/* HISTORIA FIX */
+    .btn-primary:hover{
+      background:var(--gold-dark);
+    }
 
-.split{
-display:grid;
-grid-template-columns:1.2fr 1.8fr;
-gap:60px;
-align-items:center;
-}
+    .btn-secondary{
+      color:white;
+      border:1px solid rgba(255,255,255,.55);
+      margin-left:10px;
+    }
 
-.card{
-background:white;
-padding:40px;
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-max-width:520px;
-}
+    .section{
+      padding:90px 0;
+    }
 
-.story-img{
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:20px;
-}
+    .split{
+      display:grid;
+      grid-template-columns:1.2fr 1.8fr;
+      gap:60px;
+      align-items:center;
+    }
 
-/* GALERIA */
+    .card{
+      background:var(--paper);
+      padding:40px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
+    .story-card{
+      max-width:560px;
+    }
 
-.gallery img{
-width:100%;
-border-radius:20px;
-cursor:pointer;
-transition:.3s;
-}
+    .story-img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      border-radius:20px;
+      display:block;
+      box-shadow:var(--shadow);
+    }
 
-.gallery img:hover{
-transform:scale(1.05);
-}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
 
-.lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:200;
-}
+    .gallery img{
+      width:100%;
+      border-radius:20px;
+      cursor:pointer;
+      transition:.3s;
+      display:block;
+      height:320px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+    }
 
-.lightbox img{
-max-width:90%;
-max-height:90%;
-}
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
 
-/* AGENDA */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.9);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:200;
+      padding:20px;
+    }
 
-.agenda{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-top:40px;
-}
+    .lightbox img{
+      max-width:90%;
+      max-height:90%;
+      border-radius:16px;
+    }
 
-.agenda div{
-background:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
-box-shadow:var(--shadow);
-}
+    .agenda{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      margin-top:40px;
+    }
 
-/* LLOC */
+    .agenda div{
+      background:var(--paper);
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
 
-.location{
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3")
-center/cover;
+    .location{
+      background:
+        linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+      color:white;
+      text-align:center;
+      padding:120px 0;
+    }
 
-color:white;
-text-align:center;
-padding:120px 0;
-}
+    .location p{
+      max-width:760px;
+      margin:0 auto 10px;
+    }
 
-iframe{
-width:100%;
-height:350px;
-border:none;
-border-radius:20px;
-margin-top:30px;
-}
+    iframe{
+      width:100%;
+      height:350px;
+      border:none;
+      border-radius:20px;
+      margin-top:30px;
+      box-shadow:var(--shadow);
+    }
 
-/* HOTELS */
+    .hotels{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
 
-.hotels{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
+    .hotel{
+      background:var(--paper);
+      padding:25px;
+      border-radius:15px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
 
-.hotel{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:var(--shadow);
-}
+    .assistencia-card{
+      max-width:760px;
+      margin:auto;
+      text-align:center;
+    }
 
-footer{
-text-align:center;
-padding:60px;
-color:#777;
-}
+    .assistencia-card ul{
+      list-style:none;
+      padding:0;
+      margin:22px 0 0;
+      display:grid;
+      gap:12px;
+      text-align:left;
+    }
 
-/* RESPONSIVE */
+    .assistencia-card li{
+      background:#fcfaf6;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+    }
 
-@media(max-width:900px){
+    footer{
+      text-align:center;
+      padding:60px;
+      color:#777;
+    }
 
-.split{grid-template-columns:1fr}
+    @media (max-width:900px){
+      .split{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .agenda{grid-template-columns:1fr 1fr}
+      .hotels{grid-template-columns:1fr}
+      .hero-content{padding:40px}
+      .story-img{height:300px}
+      .countdown{grid-template-columns:repeat(2,1fr)}
+      .nav-inner{flex-direction:column;align-items:flex-start}
+    }
 
-.gallery{grid-template-columns:1fr 1fr}
-
-.agenda{grid-template-columns:1fr 1fr}
-
-.hotels{grid-template-columns:1fr}
-
-.hero-content{padding:40px}
-
-.story-img{
-height:300px
-}
-
-}
-
-</style>
+    @media (max-width:640px){
+      .gallery{grid-template-columns:1fr}
+      .agenda{grid-template-columns:1fr}
+      .hero-card{min-height:82vh;background-attachment:scroll}
+      .hero-content{padding:30px}
+      .btn-secondary{margin-left:0;display:inline-block}
+      .section{padding:64px 0}
+      .card{padding:28px}
+    }
+  </style>
 </head>
-
 <body>
 
-<nav>
-<div class="container nav-inner">
-<strong>Oscar & Cristina</strong>
-<div>
-<a href="#historia">Nosaltres</a>
-<a href="#agenda">Agenda</a>
-<a href="#galeria">Galeria</a>
-<a href="#lloc">Lloc</a>
-<a href="#assistencia">Assistència</a>
-</div>
-</div>
-</nav>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Cris & Oscar</a>
+      <div class="links">
+        <a href="#historia">Nosaltres</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#lloc">Lloc</a>
+        <a href="#assistencia">Assistència</a>
+      </div>
+    </div>
+  </nav>
 
-<header class="hero container">
-<div class="hero-card">
-<div class="hero-content">
+  <header id="top" class="hero container">
+    <div class="hero-card">
+      <div class="hero-content">
 
-<div class="eyebrow">5 setembre 2026</div>
+        <div class="eyebrow">18 de setembre de 2026 · Sant Cugat del Vallès</div>
 
-<h1>Oscar & Cristina</h1>
+        <h1>Cris & Oscar</h1>
 
-<p>Ens faria moltíssima il·lusió compartir aquest dia tan especial amb vosaltres.</p>
+        <p>
+          Ens casem! Ens fa moltíssima il·lusió compartir amb vosaltres que el 18 de setembre de 2026 celebrarem la nostra boda a Sant Cugat del Vallès. Un dia que somiem especial, envoltats de les persones que estimem de debò.
+        </p>
 
-<div class="countdown">
-<div class="count"><h2 id="days">--</h2>Dies</div>
-<div class="count"><h2 id="hours">--</h2>Hores</div>
-<div class="count"><h2 id="minutes">--</h2>Minuts</div>
-<div class="count"><h2 id="seconds">--</h2>Segons</div>
-</div>
+        <p>
+          Ens encantaria que forméssiu part d’aquest moment tan important per a nosaltres. Apunteu la data a l’agenda: molt aviat compartirem més detalls.
+        </p>
 
-<a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
+        <div class="countdown">
+          <div class="count"><h2 id="days">--</h2>Dies</div>
+          <div class="count"><h2 id="hours">--</h2>Hores</div>
+          <div class="count"><h2 id="minutes">--</h2>Minuts</div>
+          <div class="count"><h2 id="seconds">--</h2>Segons</div>
+        </div>
 
-</div>
-</div>
-</header>
+        <a class="btn btn-primary" href="#assistencia">Confirmar assistència</a>
+        <a class="btn btn-secondary" href="#lloc">Veure ubicació</a>
 
-<section id="historia" class="section">
-<div class="container split">
+      </div>
+    </div>
+  </header>
 
-<div class="card">
-<h2>La nostra història</h2>
-<p>Després de molts moments compartits, viatges i aventures, hem decidit celebrar aquest dia amb les persones que més estimem.</p>
-</div>
+  <section id="historia" class="section">
+    <div class="container split">
 
-<img class="story-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80">
+      <div class="card story-card">
+        <h2>La nostra història</h2>
+        <p>
+          Ens fa molt feliços poder anunciar que el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.
+        </p>
+        <p>
+          Hem imaginat aquesta celebració com un dia ple d’afecte, de persones estimades i de records bonics. Gràcies per formar part del nostre camí.
+        </p>
+        <p>
+          <strong>Cris & Oscar us esperem!</strong>
+        </p>
+      </div>
 
-</div>
-</section>
+      <img class="story-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" alt="Imatge romàntica de celebració">
 
-<section id="agenda" class="section">
-<div class="container">
+    </div>
+  </section>
 
-<h2 style="text-align:center">Agenda del dia</h2>
+  <section id="agenda" class="section">
+    <div class="container">
 
-<div class="agenda">
-<div><h3>18:00</h3>Cerimònia</div>
-<div><h3>19:00</h3>Cocktail</div>
-<div><h3>21:00</h3>Sopar</div>
-<div><h3>23:30</h3>Festa</div>
-</div>
+      <h2 style="text-align:center">Agenda del dia</h2>
 
-</div>
-</section>
+      <div class="agenda">
+        <div><h3>17:30</h3>Arribada dels convidats</div>
+        <div><h3>18:00</h3>Cerimònia</div>
+        <div><h3>19:00</h3>Còctel</div>
+        <div><h3>21:00</h3>Sopar i celebració</div>
+      </div>
 
-<section id="galeria" class="section">
-<div class="container">
+    </div>
+  </section>
 
-<h2 style="text-align:center">Galeria</h2>
+  <section id="galeria" class="section">
+    <div class="container">
 
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92">
-<img src="https://images.unsplash.com/photo-1529636798458-92182e662485">
-<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
-</div>
+      <h2 style="text-align:center">Galeria</h2>
 
-</div>
-</section>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=1200&q=80" alt="Foto de celebració 1">
+        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80" alt="Foto de celebració 2">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto de celebració 3">
+      </div>
 
-<div class="lightbox" id="lightbox">
-<img id="lightbox-img">
-</div>
+    </div>
+  </section>
 
-<section id="lloc" class="location">
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" alt="Imatge ampliada">
+  </div>
 
-<div class="container">
+  <section id="lloc" class="location">
+    <div class="container">
 
-<h2>Masia Can Magí</h2>
+      <h2>Sant Cugat del Vallès</h2>
 
-<p>Av. de Can Magí 5 · Sant Cugat del Vallès</p>
+      <p>
+        El 18 de setembre de 2026 celebrarem la nostra boda a Sant Cugat del Vallès. Ben aviat compartirem tots els detalls exactes del lloc i de l’organització del dia.
+      </p>
 
-<iframe src="https://maps.google.com/maps?q=masia%20can%20magi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+      <p>
+        De moment, reserveu la data i prepareu-vos per viure-ho amb nosaltres.
+      </p>
 
-</div>
+      <iframe src="https://maps.google.com/maps?q=Sant%20Cugat%20del%20Vall%C3%A8s&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mapa de Sant Cugat del Vallès"></iframe>
 
-</section>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container">
+  <section class="section">
+    <div class="container">
 
-<h2 style="text-align:center">Hotels recomanats</h2>
+      <h2 style="text-align:center">Hotels recomanats</h2>
 
-<div class="hotels">
+      <div class="hotels">
+        <div class="hotel">
+          <h3>Hotel Sant Cugat</h3>
+          <p>A prop del centre i ben comunicat.</p>
+        </div>
 
-<div class="hotel">
-<h3>Hotel Sant Cugat</h3>
-<p>A 10 minuts de la masia</p>
-</div>
+        <div class="hotel">
+          <h3>AC Hotel Sant Cugat</h3>
+          <p>Una opció còmoda per a convidats de fora.</p>
+        </div>
 
-<div class="hotel">
-<h3>AC Hotel Sant Cugat</h3>
-<p>Ideal per convidats de fora</p>
-</div>
+        <div class="hotel">
+          <h3>B&amp;B Hotel Sant Cugat</h3>
+          <p>Alternativa pràctica i més econòmica.</p>
+        </div>
+      </div>
 
-<div class="hotel">
-<h3>B&B Hotel Sant Cugat</h3>
-<p>Opció econòmica</p>
-</div>
+    </div>
+  </section>
 
-</div>
+  <section id="assistencia" class="section">
+    <div class="container">
 
-</div>
-</section>
+      <div class="card assistencia-card">
 
-<section id="assistencia" class="section">
-<div class="container">
+        <h2>Confirmació d'assistència</h2>
 
-<div class="card">
+        <p>
+          Molt aviat afegirem el formulari per confirmar assistència.
+        </p>
 
-<h2>Confirmació d'assistència</h2>
+        <p>
+          Quan estigui disponible, podreu indicar:
+        </p>
 
-<p>Properament afegirem el formulari RSVP.</p>
+        <ul>
+          <li>Si podreu acompanyar-nos el dia de la boda</li>
+          <li>Intoleràncies o al·lèrgies alimentàries</li>
+          <li>Nombre d’acompanyants</li>
+          <li>Si necessitareu ajuda amb el transport</li>
+        </ul>
 
-<a class="btn btn-primary">Formulari properament</a>
+        <a class="btn btn-primary" href="javascript:void(0)">Formulari properament</a>
 
-</div>
+      </div>
 
-</div>
-</section>
+    </div>
+  </section>
 
-<footer>
-Oscar & Cristina · 5 setembre 2026
-</footer>
+  <footer>
+    Cris & Oscar · 18 setembre 2026 · Sant Cugat del Vallès
+  </footer>
 
-<script>
+  <script>
+    const target = new Date(2026, 8, 18, 0, 0, 0);
 
-const target=new Date(2026,8,5);
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const minutes = document.getElementById("minutes");
+    const seconds = document.getElementById("seconds");
 
-const days=document.getElementById("days");
-const hours=document.getElementById("hours");
-const minutes=document.getElementById("minutes");
-const seconds=document.getElementById("seconds");
+    function update(){
+      const now = new Date();
+      const diff = target - now;
 
-function update(){
-const now=new Date();
-const diff=target-now;
+      if (diff <= 0) {
+        days.textContent = "0";
+        hours.textContent = "0";
+        minutes.textContent = "0";
+        seconds.textContent = "0";
+        return;
+      }
 
-days.textContent=Math.floor(diff/86400000);
-hours.textContent=Math.floor(diff%86400000/3600000);
-minutes.textContent=Math.floor(diff%3600000/60000);
-seconds.textContent=Math.floor(diff%60000/1000);
-}
+      days.textContent = Math.floor(diff / 86400000);
+      hours.textContent = Math.floor((diff % 86400000) / 3600000);
+      minutes.textContent = Math.floor((diff % 3600000) / 60000);
+      seconds.textContent = Math.floor((diff % 60000) / 1000);
+    }
 
-setInterval(update,1000);
-update();
+    setInterval(update, 1000);
+    update();
 
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightbox-img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
 
-document.querySelectorAll(".gallery img").forEach(img=>{
-img.onclick=()=>{
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
-};
-});
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.onclick = () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      };
+    });
 
-lightbox.onclick=()=>{
-lightbox.style.display="none";
-};
-
-</script>
+    lightbox.onclick = () => {
+      lightbox.style.display = "none";
+    };
+  </script>
 
 </body>
 </html>
