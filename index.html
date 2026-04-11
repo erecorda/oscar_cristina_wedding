@@ -1,50 +1,88 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cris & Oscar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{--gold:#b89563;--gold-dark:#9f7f51;--bg:#f6f2ec;--paper:#fffdfa;--text:#2c2a28;--muted:#6e675f;--max:1200px;--radius:22px;--shadow:0 30px 60px rgba(0,0,0,.15);--line:rgba(44,42,40,.10)}
     *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    h1,h2,h3{font-family:"Playfair Display",serif;margin-top:0;line-height:1.1}
+    body{margin:0;font-family:"Cormorant Garamond",serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:1.18rem}
+    h1,h2{font-family:"Allura",cursive;font-weight:400;margin-top:0;line-height:1.05}
+    h3{font-family:"Cormorant Garamond",serif;font-weight:600;margin-top:0;line-height:1.2}
     .container{width:min(92%,var(--max));margin:auto}
     nav{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #eee;z-index:100}
     .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:18px}
-    .brand{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none}
-    nav .links{display:flex;flex-wrap:wrap;gap:18px} nav .links a{text-decoration:none;color:var(--muted);font-weight:500} nav .links a:hover{color:var(--text)}
-    .hero{padding:40px 0}.hero-card{min-height:90vh;border-radius:32px;display:flex;align-items:end;overflow:hidden;background:linear-gradient(rgba(0,0,0,.36),rgba(0,0,0,.62)),url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=80") center/cover fixed;box-shadow:var(--shadow)}
-    .hero-content{color:white;padding:60px;max-width:780px}.hero h1{font-size:clamp(42px,6vw,76px);margin-bottom:14px}.hero p{font-size:1.08rem;max-width:58ch;margin:0 0 14px}
+    .brand{font-family:"Allura",cursive;font-weight:400;font-size:2rem;color:var(--text);text-decoration:none;line-height:1}
+    nav .links{display:flex;flex-wrap:wrap;gap:18px} nav .links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:1.05rem} nav .links a:hover{color:var(--text)}
+    .hero{padding:40px 0}.hero-card{min-height:90vh;border-radius:32px;display:flex;align-items:end;overflow:hidden;background:linear-gradient(rgba(0,0,0,.36),rgba(0,0,0,.62)),url("foto_fondo.jpg") center 38%/cover fixed;box-shadow:var(--shadow)}
+    .hero-content{color:white;padding:60px;max-width:780px}.hero h1{font-size:clamp(78px,12vw,170px);margin-bottom:10px}.hero p{font-size:1.18rem;max-width:58ch;margin:0 0 14px}
     .eyebrow{border:1px solid rgba(255,255,255,.6);display:inline-block;padding:6px 14px;border-radius:30px;font-size:14px;margin-bottom:18px}
     .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;max-width:560px}.count{background:rgba(255,255,255,.18);padding:18px;text-align:center;border-radius:12px;backdrop-filter:blur(6px)} .count h2{margin:0 0 4px;font-size:2rem}
-    .btn{display:inline-block;padding:14px 24px;border-radius:30px;text-decoration:none;margin-top:22px;font-weight:600;transition:.2s ease}.btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--gold);color:white}.btn-primary:hover{background:var(--gold-dark)} .btn-secondary{color:white;border:1px solid rgba(255,255,255,.55);margin-left:10px}
+    .btn{display:inline-block;padding:14px 24px;border-radius:30px;text-decoration:none;margin-top:22px;font-weight:700;transition:.15s ease;appearance:none;border:0;cursor:pointer;line-height:1.1}
+    .btn:hover{transform:none}
+    .btn-primary{background:#9f7f51;color:#fff;box-shadow:none}
+    .btn-primary:hover{background:#8c6e44}
     .section{padding:90px 0}.split{display:grid;grid-template-columns:1.2fr 1.8fr;gap:60px;align-items:center}.card{background:var(--paper);padding:40px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line)} .story-card{max-width:560px}
     .story-img{width:100%;height:420px;object-fit:cover;border-radius:20px;display:block;box-shadow:var(--shadow)} .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .gallery img{width:100%;border-radius:20px;cursor:pointer;transition:.3s;display:block;height:320px;object-fit:cover;box-shadow:var(--shadow)} .gallery img:hover{transform:scale(1.03)}
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;justify-content:center;align-items:center;z-index:200;padding:20px}.lightbox img{max-width:90%;max-height:90%;border-radius:16px}
-    .agenda{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}.agenda div{background:var(--paper);padding:30px;border-radius:15px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--line)}
-    .location{background:linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.58)),url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80") center/cover;color:white;text-align:center;padding:120px 0}.location p{max-width:760px;margin:0 auto 10px}
+    .agenda{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:40px}
+    .agenda-item{background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    .agenda-item img{width:100%;height:220px;object-fit:cover;display:block}
+    .agenda-content{padding:22px}
+    .agenda-time{display:inline-block;font-weight:700;color:var(--gold-dark);margin-bottom:8px}
+    .agenda-place{color:var(--muted);margin:8px 0 0}
+    .location{background:linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.58)),url("fotos_galeria/5.jpg") center/cover;color:white;text-align:center;padding:120px 0}.location p{max-width:760px;margin:0 auto 10px}
+    .location-photo{width:min(100%,860px);height:360px;object-fit:cover;border-radius:20px;display:block;margin:20px auto 0;box-shadow:var(--shadow)}
+    .location-grid{margin:24px auto 0;max-width:980px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;text-align:left}
+    .location-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:18px 20px}
+    .location-card h3{margin:0 0 8px}
+    .location-card p{margin:7px 0}
+    .location-card a{color:#ffe8bf;text-decoration:underline;text-underline-offset:2px}
+    .location-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .location-links a{display:inline-block;padding:8px 12px;border:1px solid rgba(255,255,255,.4);border-radius:999px;color:#fff;text-decoration:none;font-size:.92rem}
+    .location-links a:hover{background:rgba(255,255,255,.12)}
     iframe{width:100%;height:350px;border:none;border-radius:20px;margin-top:30px;box-shadow:var(--shadow)}
-    .hotels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.hotel{background:var(--paper);padding:25px;border-radius:15px;box-shadow:var(--shadow);border:1px solid var(--line)}
-    .assistencia-card{max-width:760px;margin:auto;text-align:center}.assistencia-card ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px;text-align:left}.assistencia-card li{background:#fcfaf6;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+    .practical-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .practical-card h2{margin-bottom:10px}
+    .practical-card p{margin:10px 0}
+    .iban-box{margin-top:14px;background:#f9f4ea;border:1px dashed #d9c6a7;border-radius:14px;padding:12px 14px}
+    .iban-box code{display:block;margin-top:6px;font-size:1rem;letter-spacing:.02em;word-break:break-all}
+    .form-cta{text-align:center}
+    .form-cta p{max-width:720px;margin:0 auto 10px}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+    .modal.is-open{display:flex}
+    .modal-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:var(--paper);border-radius:18px;box-shadow:var(--shadow);padding:24px;border:1px solid var(--line)}
+    .modal-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .modal-close{border:1px solid var(--line);background:#fff;border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:18px;line-height:1}
+    .assist-form{display:grid;gap:12px;margin-top:12px}
+    .assist-form label{font-weight:600}
+    .assist-form input,.assist-form select,.assist-form textarea{width:100%;padding:10px 12px;border:1px solid #d8d2c7;border-radius:10px;font:inherit;background:#fff}
+    .assist-form input,.assist-form select{height:46px}
+    .assist-form textarea{min-height:96px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-status{min-height:24px;font-size:.98rem}
+    .form-status.ok{color:#1f6a32}
+    .form-status.err{color:#9a2330}
     footer{text-align:center;padding:60px;color:#777}
-    @media (max-width:900px){.split{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.agenda{grid-template-columns:1fr 1fr}.hotels{grid-template-columns:1fr}.hero-content{padding:40px}.story-img{height:300px}.countdown{grid-template-columns:repeat(2,1fr)}.nav-inner{flex-direction:column;align-items:flex-start}}
-    @media (max-width:640px){.gallery{grid-template-columns:1fr}.agenda{grid-template-columns:1fr}.hero-card{min-height:82vh;background-attachment:scroll}.hero-content{padding:30px}.btn-secondary{margin-left:0;display:inline-block}.section{padding:64px 0}.card{padding:28px}}
+    @media (max-width:900px){.split{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.agenda{grid-template-columns:1fr}.location-grid{grid-template-columns:1fr}.practical-grid{grid-template-columns:1fr}.hero-content{padding:40px}.story-img{height:300px}.location-photo{height:280px}.countdown{grid-template-columns:repeat(2,1fr)}.nav-inner{flex-direction:column;align-items:flex-start}}
+    @media (max-width:640px){.gallery{grid-template-columns:1fr}.agenda{grid-template-columns:1fr}.hero-card{min-height:82vh;background-attachment:scroll}.hero-content{padding:30px}.section{padding:64px 0}.card{padding:28px}.form-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <nav><div class="container nav-inner"><a class="brand" href="#top">Cris & Oscar</a><div class="links"><a href="#historia">Nosaltres</a><a href="#agenda">Agenda</a><a href="#galeria">Galeria</a><a href="#lloc">Lloc</a><a href="#assistencia">Assistència</a></div></div></nav>
-  <header id="top" class="hero container"><div class="hero-card"><div class="hero-content"><div class="eyebrow">18 de setembre de 2026 · Masia Can Magí</div><h1>Cris & Oscar</h1><p>Ens casem! Ens fa moltíssima il·lusió compartir amb tu que el 18 de setembre de 2026 celebrarem la nostra boda a Masia Can Magí, a Sant Cugat del Vallès.</p><p>Serà un dia molt especial, envoltats de les persones que estimem de debò. Ens encantaria que formessis part d’aquest moment tan important per a nosaltres.</p><p>Apunta la data a l’agenda. Molt aviat t’explicarem més detalls. Gràcies per ser a les nostres vides. Esperem celebrar junts un dia ple d’afecte i de records bonics.</p><div class="countdown"><div class="count"><h2 id="days">--</h2>Dies</div><div class="count"><h2 id="hours">--</h2>Hores</div><div class="count"><h2 id="minutes">--</h2>Minuts</div><div class="count"><h2 id="seconds">--</h2>Segons</div></div><a class="btn btn-primary" href="#assistencia">Confirmar assistència</a><a class="btn btn-secondary" href="#lloc">Veure ubicació</a></div></div></header>
-  <section id="historia" class="section"><div class="container split"><div class="card story-card"><h2>La nostra història</h2><p>Ens fa immensament feliços poder compartir aquesta notícia amb tu: el 18 de setembre de 2026 viurem un dels dies més importants de les nostres vides.</p><p>Hem imaginat aquesta celebració a Masia Can Magí com un dia ple d’afecte, de persones estimades i de moments que recordarem sempre.</p><p><strong>Cris & Oscar t’esperen!</strong></p></div><img class="story-img" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80" alt="Celebració elegant de boda"></div></section>
-  <section id="agenda" class="section"><div class="container"><h2 style="text-align:center">Agenda del dia</h2><div class="agenda"><div><h3>17:30</h3>Arribada dels convidats</div><div><h3>18:00</h3>Cerimònia</div><div><h3>19:00</h3>Còctel</div><div><h3>21:00</h3>Sopar i celebració</div></div></div></section>
-  <section id="galeria" class="section"><div class="container"><h2 style="text-align:center">Galeria</h2><div class="gallery"><img src="https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?auto=format&fit=crop&w=1400&q=80" alt="Taula elegant de boda"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1400&q=80" alt="Brindis de celebració"><img src="https://images.unsplash.com/photo-1519741347686-c1e331fcbebd?auto=format&fit=crop&w=1400&q=80" alt="Decoració floral de boda"></div></div></section>
-  <div class="lightbox" id="lightbox"><img id="lightbox-img" alt="Imatge ampliada"></div>
-  <section id="lloc" class="location"><div class="container"><h2>Masia Can Magí</h2><p>Avinguda de Can Magí, 5 · 08173 Sant Cugat del Vallès</p><p>Ens veurem en aquest espai tan especial per celebrar un dia que volem compartir amb tota la gent que estimem.</p><iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe></div></section>
-  <section class="section"><div class="container"><h2 style="text-align:center">Hotels recomanats</h2><div class="hotels"><div class="hotel"><h3>Hotel Sant Cugat</h3><p>A prop del centre i ben comunicat amb la masia.</p></div><div class="hotel"><h3>AC Hotel Sant Cugat</h3><p>Una opció còmoda per a convidats que venen de fora.</p></div><div class="hotel"><h3>B&amp;B Hotel Sant Cugat</h3><p>Alternativa pràctica i més econòmica per passar la nit.</p></div></div></div></section>
-  <section id="assistencia" class="section"><div class="container"><div class="card assistencia-card"><h2>Confirmació d'assistència</h2><p>Molt aviat afegirem el formulari per confirmar assistència.</p><p>Quan estigui disponible, podràs indicar:</p><ul><li>Si podràs acompanyar-nos el dia de la boda</li><li>Intoleràncies o al·lèrgies alimentàries</li><li>Nombre d’acompanyants</li><li>Si necessitaràs ajuda amb el transport</li></ul><a class="btn btn-primary" href="javascript:void(0)">Formulari properament</a></div></div></section>
-  <footer>Cris & Oscar · 18 setembre 2026 · Masia Can Magí</footer>
+  <nav><div class="container nav-inner"><a class="brand" href="#top">Cris & Oscar</a><div class="links"><a href="#historia">Nuestra historia</a><a href="#agenda">Agenda</a><a href="#galeria">Galería</a><a href="#lugar">Lugar</a><a href="#asistencia">Asistencia</a></div></div></nav>
+  <header id="top" class="hero container"><div class="hero-card"><div class="hero-content"><div class="eyebrow">18 de septiembre de 2026 · Masia Can Magí</div><h1>Cris & Oscar</h1><p>¡Nos casamos! Nos hace muchísima ilusión compartir contigo que el 18 de septiembre de 2026 celebraremos nuestra boda en Masia Can Magí, en Sant Cugat del Vallès.</p><p>Será un día muy especial, rodeados de las personas que de verdad queremos. Nos encantaría que formaras parte de este momento tan importante para nosotros.</p><p>Apunta la fecha en tu agenda. Muy pronto te contaremos más detalles. Gracias por estar en nuestras vidas. Esperamos celebrar juntos un día lleno de cariño y recuerdos bonitos.</p><div class="countdown"><div class="count"><h2 id="days">--</h2>Días</div><div class="count"><h2 id="hours">--</h2>Horas</div><div class="count"><h2 id="minutes">--</h2>Minutos</div><div class="count"><h2 id="seconds">--</h2>Segundos</div></div></div></div></header>
+  <section id="historia" class="section"><div class="container split"><div class="card story-card"><h2>Nuestra historia</h2><p>Desde el primer momento hubo algo distinto.<br>Una conexión profunda, una calma imposible de explicar.</p><p>Con el tiempo descubrimos que queríamos lo mismo:<br>amor sincero, paz, complicidad… y construir algo verdadero.</p><p>Hemos pasado por decisiones, dudas, risas y cambios,<br>y en cada paso, seguimos eligiéndonos.</p><p>Porque no se trata de hacerlo perfecto,<br>sino de atreverse:<br>a quererse, a crecer, y a construir una vida juntos.</p><p>Y aquí estamos,<br>comenzando la mayor aventura de nuestras vidas.</p><p>Nos volveríamos a elegir, una y mil veces más.</p></div><img class="story-img" src="fotos_galeria/IMG_2874.jpeg" alt="Celebración de boda"></div></section>
+  <section id="agenda" class="section"><div class="container"><h2 style="text-align:center">Agenda del día</h2><div class="agenda"><article class="agenda-item"><img src="fotos_ubicacion/parroquia-Sant-Cebria-1500x630.jpg" alt="Iglesia de Valldoreix"><div class="agenda-content"><span class="agenda-time">17:00 a 18:00 h</span><h3>Iglesia de Valldoreix</h3><p>Empieza la celebración del matrimonio.</p></div></article><article class="agenda-item"><img src="fotos_ubicacion/la-masia-can-magi-y-su-precioso-jardin-frontal_7f2b6b39_230801121004_1280x853.jpg" alt="Masia Can Magí jardín"><div class="agenda-content"><span class="agenda-time">18:30 h</span><h3>Aperitivo en Masia Can Magí</h3><p class="agenda-place">Brindis y encuentro en los jardines de la masía.</p></div></article><article class="agenda-item"><img src="fotos_ubicacion/una-sala-modernista-de-la-masia-can-magi_bbed5078_230801121403_1000x585.jpg" alt="Salón de Masia Can Magí"><div class="agenda-content"><span class="agenda-time">21:00 a 00:00 h</span><h3>Cena en Masia Can Magí</h3><p class="agenda-place">Cena y celebración en el salón principal.</p></div></article><article class="agenda-item"><img src="fotos_ubicacion/boda-marta-alex-270_1_9106-172544554494864.webp" alt="Fiesta en Masia Can Magí"><div class="agenda-content"><span class="agenda-time">00:00 a 04:00 h</span><h3>Fiesta en Masia Can Magí</h3><p class="agenda-place">Seguimos celebrando hasta la madrugada.</p></div></article></div></div></section>
+  <section id="galeria" class="section"><div class="container"><h2 style="text-align:center">Galería</h2><div class="gallery"><img src="fotos_galeria/436c5be2-15b8-4b3a-8229-d0ff0bea4604.JPG" alt="Foto galería 1"><img src="fotos_galeria/5.jpg" alt="Foto galería 2"><img src="fotos_galeria/IMG_2874.jpeg" alt="Foto galería 3"><img src="fotos_galeria/b5a4c607-acd6-4418-ad4f-f37fc27ed4e4.JPG" alt="Foto galería 4"><img src="fotos_galeria/ba777853-0c9c-41f7-9946-0d90382893d4%20(1).JPG" alt="Foto galería 5"><img src="fotos_galeria/c0859fe3-3b84-4f4b-9623-9cec620f02b0.JPG" alt="Foto galería 6"><img src="fotos_galeria/c3ae1c62-07ce-4f16-ab6d-ff83f1e16671%20(1).JPG" alt="Foto galería 7"><img src="fotos_galeria/cab1e59f-92be-4859-b68f-1af967176253%20(1).JPG" alt="Foto galería 8"><img src="fotos_galeria/f2dec366-aa0e-4482-bed2-489a1b4b167d.JPG" alt="Foto galería 9"></div></div></section>
+  <div class="lightbox" id="lightbox"><img id="lightbox-img" alt="Imagen ampliada"></div>
+  <section id="lugar" class="location"><div class="container"><h2>Ubicaciones del día</h2><p>Iglesia y celebración en Sant Cugat del Vallès (Valldoreix y Masia Can Magí).</p><img class="location-photo" src="fotos_ubicacion/la-masia-can-magi-y-su-precioso-jardin-frontal_7f2b6b39_230801121004_1280x853.jpg" alt="Masia Can Magí"><div class="location-grid"><article class="location-card"><h3>Iglesia de San Cebrián de Valldoreix</h3><p>Carrer de l'Església, 7 · 08197 Valldoreix (Barcelona)</p><p>Tel. 93 674 05 69 · <a href="mailto:parroquia@santcebriavalldoreix.org">parroquia@santcebriavalldoreix.org</a></p><p>Parking: calles cercanas de la zona (mejor llegar con margen).</p><div class="location-links"><a href="https://www.santcebriavalldoreix.org/" target="_blank" rel="noopener noreferrer">Web parroquia</a><a href="https://maps.google.com/?q=Carrer+de+l%27Esglesia+7+Valldoreix" target="_blank" rel="noopener noreferrer">Mapa iglesia</a></div></article><article class="location-card"><h3>Masia Can Magí</h3><p>Av. de Can Magí, 5 · 08173 Sant Cugat del Vallès (Barcelona)</p><p>Cómo llegar: bus L1/L8/PR A4 y FGC S1/S2 (Rodalies R8).</p><p>Parking: se puede aparcar en el propio recinto.</p><div class="location-links"><a href="https://sensacions.com/es/" target="_blank" rel="noopener noreferrer">Web Can Magí</a><a href="https://www.instagram.com/canmagi/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://maps.google.com/?q=Masia+Can+Magi+Sant+Cugat+del+Valles" target="_blank" rel="noopener noreferrer">Mapa masía</a></div></article></div><iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe></div></section>
+  <section id="asistencia" class="section"><div class="container practical-grid"><article class="card practical-card"><h2>Datos útiles</h2><p><strong>Vestimenta:</strong> hombres con traje oscuro y mujeres elegantes. Lo más importante: venir con ganas de disfrutar.</p><p><strong>Niños:</strong> la boda está pensada solo para adultos. Gracias por entenderlo.</p></article><article class="card practical-card"><h2>Gracias de corazón</h2><p>Vuestra presencia es el mejor regalo. Si además os apetece tener un detalle con nosotros, podéis hacerlo aquí:</p><div class="iban-box"><strong>Cuenta corriente</strong><code>ES4215632626313263041212</code></div></article></div></section>
+  <section class="section"><div class="container form-cta"><h2>Confirmación de asistencia</h2><p>Pulsa el botón y completa el cuestionario. Tus datos quedarán guardados automáticamente.</p><button class="btn btn-primary" id="open-form-btn" type="button">Confirmación asistencia</button></div></section>
+  <div class="modal" id="assist-modal" aria-hidden="true"><div class="modal-card"><div class="modal-top"><h3 style="margin:0">Cuestionario de asistencia</h3><button class="modal-close" id="close-form-btn" aria-label="Cerrar" type="button">×</button></div><form id="assist-form" class="assist-form"><div class="form-row"><div><label for="nombre_apellidos">Nombre y apellidos</label><input id="nombre_apellidos" name="nombre_apellidos" required></div><div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" required></div></div><div class="form-row"><div><label for="email">Email</label><input id="email" name="email" type="email" required></div><div><label for="confirmacion_asistencia">Confirmación asistencia</label><select id="confirmacion_asistencia" name="confirmacion_asistencia" required><option value="">Selecciona una opción</option><option value="Sí, asistiré">Sí, asistiré</option><option value="No podré asistir">No podré asistir</option></select></div></div><div><label for="intolerancias_alergenos">Intolerancias o alérgenos alimentarios</label><textarea id="intolerancias_alergenos" name="intolerancias_alergenos"></textarea></div><div><label for="otros_comentarios">Otros comentarios</label><textarea id="otros_comentarios" name="otros_comentarios"></textarea></div><div class="form-status" id="form-status"></div><button class="btn btn-primary" type="submit">Enviar formulario</button></form></div></div>
+  <footer>Cris & Oscar · 18 septiembre 2026 · Masia Can Magí</footer>
   <script>
     const target = new Date(2026, 8, 18, 0, 0, 0);
     const days = document.getElementById("days"), hours = document.getElementById("hours"), minutes = document.getElementById("minutes"), seconds = document.getElementById("seconds");
@@ -52,6 +90,36 @@
     const lightbox = document.getElementById("lightbox"), lightboxImg = document.getElementById("lightbox-img");
     document.querySelectorAll(".gallery img").forEach(img => img.onclick = () => { lightbox.style.display = "flex"; lightboxImg.src = img.src; });
     lightbox.onclick = () => { lightbox.style.display = "none"; };
+    const modal = document.getElementById("assist-modal");
+    const openFormBtn = document.getElementById("open-form-btn");
+    const closeFormBtn = document.getElementById("close-form-btn");
+    const assistForm = document.getElementById("assist-form");
+    const formStatus = document.getElementById("form-status");
+    function openModal(){ modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false"); }
+    function closeModal(){ modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true"); }
+    openFormBtn.onclick = openModal;
+    closeFormBtn.onclick = closeModal;
+    modal.onclick = (e) => { if (e.target === modal) closeModal(); };
+    assistForm.onsubmit = async (e) => {
+      e.preventDefault();
+      formStatus.className = "form-status";
+      formStatus.textContent = "Enviando...";
+      const payload = Object.fromEntries(new FormData(assistForm).entries());
+      try {
+        const res = await fetch("/api/asistencia", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error("Error al guardar");
+        formStatus.className = "form-status ok";
+        formStatus.textContent = "Datos guardados correctamente. ¡Gracias!";
+        assistForm.reset();
+      } catch (err) {
+        formStatus.className = "form-status err";
+        formStatus.textContent = "No se pudo guardar. Inténtalo de nuevo en unos segundos.";
+      }
+    };
   </script>
 </body>
 </html>
