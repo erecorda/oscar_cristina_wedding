@@ -63,6 +63,8 @@
     .assist-form input,.assist-form select{height:46px}
     .assist-form textarea{min-height:96px;resize:vertical}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-section-title{margin:8px 0 0;font-size:1.15rem;font-weight:700}
+    .is-hidden{display:none}
     .form-status{min-height:24px;font-size:.98rem}
     .form-status.ok{color:#1f6a32}
     .form-status.err{color:#9a2330}
@@ -81,7 +83,7 @@
   <section id="lugar" class="location"><div class="container"><h2>Ubicaciones del día</h2><p>Iglesia y celebración en Sant Cugat del Vallès (Valldoreix y Masia Can Magí).</p><img class="location-photo" src="fotos_ubicacion/la-masia-can-magi-y-su-precioso-jardin-frontal_7f2b6b39_230801121004_1280x853.jpg" alt="Masia Can Magí"><div class="location-grid"><article class="location-card"><h3>Iglesia de San Cebrián de Valldoreix</h3><p>Carrer de l'Església, 7 · 08197 Valldoreix (Barcelona)</p><p>Tel. 93 674 05 69 · <a href="mailto:parroquia@santcebriavalldoreix.org">parroquia@santcebriavalldoreix.org</a></p><p>Parking: calles cercanas de la zona (mejor llegar con margen).</p><div class="location-links"><a href="https://www.santcebriavalldoreix.org/" target="_blank" rel="noopener noreferrer">Web parroquia</a><a href="https://maps.google.com/?q=Carrer+de+l%27Esglesia+7+Valldoreix" target="_blank" rel="noopener noreferrer">Mapa iglesia</a></div></article><article class="location-card"><h3>Masia Can Magí</h3><p>Av. de Can Magí, 5 · 08173 Sant Cugat del Vallès (Barcelona)</p><p>Cómo llegar: bus L1/L8/PR A4 y FGC S1/S2 (Rodalies R8).</p><p>Parking: se puede aparcar en el propio recinto.</p><div class="location-links"><a href="https://sensacions.com/es/" target="_blank" rel="noopener noreferrer">Web Can Magí</a><a href="https://www.instagram.com/canmagi/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://maps.google.com/?q=Masia+Can+Magi+Sant+Cugat+del+Valles" target="_blank" rel="noopener noreferrer">Mapa masía</a></div></article></div><iframe src="https://maps.google.com/maps?q=Masia%20Can%20Magi%20Sant%20Cugat%20del%20Valles&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mapa de Masia Can Magí"></iframe></div></section>
   <section id="asistencia" class="section"><div class="container practical-grid"><article class="card practical-card"><h2>Datos útiles</h2><p><strong>Vestimenta:</strong> hombres con traje oscuro y mujeres elegantes. Lo más importante: venir con ganas de disfrutar.</p><p><strong>Niños:</strong> la boda está pensada solo para adultos. Gracias por entenderlo.</p></article><article class="card practical-card"><h2>Gracias de corazón</h2><p>Vuestra presencia es el mejor regalo. Si además os apetece tener un detalle con nosotros, podéis hacerlo aquí:</p><div class="iban-box"><strong>Cuenta corriente</strong><code>ES4215632626313263041212</code></div></article></div></section>
   <section class="section"><div class="container form-cta"><h2>Confirmación de asistencia</h2><p>Pulsa el botón y completa el cuestionario. Tus datos quedarán guardados automáticamente.</p><button class="btn btn-primary" id="open-form-btn" type="button">Confirmación asistencia</button></div></section>
-  <div class="modal" id="assist-modal" aria-hidden="true"><div class="modal-card"><div class="modal-top"><h3 style="margin:0">Cuestionario de asistencia</h3><button class="modal-close" id="close-form-btn" aria-label="Cerrar" type="button">×</button></div><form id="assist-form" class="assist-form"><div class="form-row"><div><label for="nombre_apellidos">Nombre y apellidos</label><input id="nombre_apellidos" name="nombre_apellidos" required></div><div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" required></div></div><div class="form-row"><div><label for="email">Email</label><input id="email" name="email" type="email" required></div><div><label for="confirmacion_asistencia">Confirmación asistencia</label><select id="confirmacion_asistencia" name="confirmacion_asistencia" required><option value="">Selecciona una opción</option><option value="Sí, asistiré">Sí, asistiré</option><option value="No podré asistir">No podré asistir</option></select></div></div><div><label for="intolerancias_alergenos">Intolerancias o alérgenos alimentarios</label><textarea id="intolerancias_alergenos" name="intolerancias_alergenos"></textarea></div><div><label for="otros_comentarios">Otros comentarios</label><textarea id="otros_comentarios" name="otros_comentarios"></textarea></div><div class="form-status" id="form-status"></div><button class="btn btn-primary" type="submit">Enviar formulario</button></form></div></div>
+  <div class="modal" id="assist-modal" aria-hidden="true"><div class="modal-card"><div class="modal-top"><h3 style="margin:0">Cuestionario de asistencia</h3><button class="modal-close" id="close-form-btn" aria-label="Cerrar" type="button">×</button></div><form id="assist-form" class="assist-form"><div class="form-row"><div><label for="nombre_apellidos">Nombre y apellidos</label><input id="nombre_apellidos" name="nombre_apellidos" required></div><div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" required></div></div><div class="form-row"><div><label for="email">Email</label><input id="email" name="email" type="email" required></div><div><label for="confirmacion_asistencia">Confirmación asistencia</label><select id="confirmacion_asistencia" name="confirmacion_asistencia" required><option value="">Selecciona una opción</option><option value="Sí, asistiré">Sí, asistiré</option><option value="No podré asistir">No podré asistir</option></select></div></div><div><label for="viene_acompanado">¿Vendrás acompañado/a?</label><select id="viene_acompanado" name="viene_acompanado" required><option value="">Selecciona una opción</option><option value="Sí">Sí</option><option value="No">No</option></select></div><div><label for="intolerancias_alergenos">Intolerancias o alérgenos alimentarios</label><textarea id="intolerancias_alergenos" name="intolerancias_alergenos"></textarea></div><div><label for="otros_comentarios">Otros comentarios</label><textarea id="otros_comentarios" name="otros_comentarios"></textarea></div><div id="acompanante-block" class="is-hidden"><p class="form-section-title">Datos del acompañante</p><div class="form-row"><div><label for="acomp_nombre_apellidos">Nombre y apellidos</label><input id="acomp_nombre_apellidos" name="acomp_nombre_apellidos"></div><div><label for="acomp_telefono">Teléfono</label><input id="acomp_telefono" name="acomp_telefono"></div></div><div class="form-row"><div><label for="acomp_email">Email</label><input id="acomp_email" name="acomp_email" type="email"></div><div><label for="acomp_confirmacion_asistencia">Confirmación asistencia</label><select id="acomp_confirmacion_asistencia" name="acomp_confirmacion_asistencia"><option value="">Selecciona una opción</option><option value="Sí, asistiré">Sí, asistiré</option><option value="No podré asistir">No podré asistir</option></select></div></div><div><label for="acomp_intolerancias_alergenos">Intolerancias o alérgenos alimentarios</label><textarea id="acomp_intolerancias_alergenos" name="acomp_intolerancias_alergenos"></textarea></div><div><label for="acomp_otros_comentarios">Otros comentarios</label><textarea id="acomp_otros_comentarios" name="acomp_otros_comentarios"></textarea></div></div><div class="form-status" id="form-status"></div><button class="btn btn-primary" type="submit">Enviar formulario</button></form></div></div>
   <footer>Cris & Oscar · 18 septiembre 2026 · Masia Can Magí</footer>
   <script>
     const target = new Date(2026, 8, 18, 0, 0, 0);
@@ -95,6 +97,23 @@
     const closeFormBtn = document.getElementById("close-form-btn");
     const assistForm = document.getElementById("assist-form");
     const formStatus = document.getElementById("form-status");
+    const vieneAcompanado = document.getElementById("viene_acompanado");
+    const acompananteBlock = document.getElementById("acompanante-block");
+    const acompananteRequiredIds = [
+      "acomp_nombre_apellidos",
+      "acomp_telefono",
+      "acomp_email",
+      "acomp_confirmacion_asistencia"
+    ];
+    function toggleAcompananteFields() {
+      const show = vieneAcompanado.value === "Sí";
+      acompananteBlock.classList.toggle("is-hidden", !show);
+      acompananteRequiredIds.forEach((id) => {
+        const el = document.getElementById(id);
+        el.required = show;
+      });
+    }
+    vieneAcompanado.onchange = toggleAcompananteFields;
     function openModal(){ modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false"); }
     function closeModal(){ modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true"); }
     openFormBtn.onclick = openModal;
@@ -104,7 +123,26 @@
       e.preventDefault();
       formStatus.className = "form-status";
       formStatus.textContent = "Enviando...";
-      const payload = Object.fromEntries(new FormData(assistForm).entries());
+      const values = Object.fromEntries(new FormData(assistForm).entries());
+      const payload = {
+        nombre_apellidos: values.nombre_apellidos,
+        telefono: values.telefono,
+        email: values.email,
+        confirmacion_asistencia: values.confirmacion_asistencia,
+        viene_acompanado: values.viene_acompanado,
+        intolerancias_alergenos: values.intolerancias_alergenos || "",
+        otros_comentarios: values.otros_comentarios || ""
+      };
+      if (values.viene_acompanado === "Sí") {
+        payload.acompanante = {
+          nombre_apellidos: values.acomp_nombre_apellidos,
+          telefono: values.acomp_telefono,
+          email: values.acomp_email,
+          confirmacion_asistencia: values.acomp_confirmacion_asistencia,
+          intolerancias_alergenos: values.acomp_intolerancias_alergenos || "",
+          otros_comentarios: values.acomp_otros_comentarios || ""
+        };
+      }
       try {
         const res = await fetch("/api/asistencia", {
           method: "POST",
@@ -115,11 +153,13 @@
         formStatus.className = "form-status ok";
         formStatus.textContent = "Datos guardados correctamente. ¡Gracias!";
         assistForm.reset();
+        toggleAcompananteFields();
       } catch (err) {
         formStatus.className = "form-status err";
         formStatus.textContent = "No se pudo guardar. Inténtalo de nuevo en unos segundos.";
       }
     };
+    toggleAcompananteFields();
   </script>
 </body>
 </html>
